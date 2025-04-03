@@ -44,11 +44,13 @@ const token = getCookie("tkn");
 </script>
 
 <style scoped>
-
 .header-box {
   position: fixed;
   top: 30px;
   display: flex;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
