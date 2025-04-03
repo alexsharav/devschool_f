@@ -3,20 +3,24 @@
     <router-link to="/" class="dev-head-main">дев.школа</router-link>
 
     <nav class="nav-bar display-main">
-      <a>Курсы</a>
-      <a>Тесты</a>
-      <a>Панель пользователя</a>
-      <a>Поддержка</a>
+      <router-link to="/courses">Курсы</router-link>
+      <router-link to="/tests">Тесты</router-link>
+      <router-link to="/user-panel">Панель пользователя</router-link>
+      <router-link to="/help">Поддержка</router-link>
     </nav>
 
-    <button class="profile-box display-main" onclick="window.location='profile.html'">
+    <button class="profile-box display-main" @click="profileButton()">
       <p class="profile-link">Профиль</p>
     </button>
 
-    <button class="display-button">
-      <image class="lines-image" src="images/three_lines.png"></image>
+    <button class="display-button" @click="">  <!--TODO: сделать показ трехлинейной кнопки + ее работу-->
+      <image class="lines-image" src=""></image>
     </button>
   </header>
+  
+  <div v-if="loginView == true">
+    <LoginView />
+  </div>
 
   <!-- LEGACY HEADER
 
@@ -39,8 +43,20 @@
 
 <script setup>
 import { getCookie } from "@/utils/cookie";
+import LoginView from "@/views/auth/Login.view.vue";
+import { ref } from 'vue'
 
 const token = getCookie("tkn");
+const loginView = ref(false);
+
+function profileButton() {
+  if (token) {
+    window.location = "/profile";
+  } else {
+    loginView.value = true;
+  }
+}
+
 </script>
 
 <style scoped>
@@ -52,7 +68,7 @@ const token = getCookie("tkn");
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  z-index: 123;
+  z-index: 1;
   width: 99%;
   max-width: 1200px;
   min-height: 64px;
@@ -126,6 +142,10 @@ const token = getCookie("tkn");
 
 .profile-link:hover {
   background: #444;
+}
+
+.display-login {
+  display: block;
 }
 
 @media (max-width: 930px) {
