@@ -1,5 +1,7 @@
 <template>
-  <router-view />
+  <div class="all-flex">
+    <router-view />
+  </div>
 </template>
 
 <style>
@@ -17,6 +19,10 @@
 
 body {
   background: #ebe8f7;
+}
+
+.all-flex {
+  display: flex;
   justify-content: center;
 }
 

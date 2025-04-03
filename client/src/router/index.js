@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/Home.view.vue'
 import LoginView from '@/views/auth/Login.view.vue';
 import RegisterView from '@/views/auth/Register.view.vue';
-import Header from '@/components/Header.vue';
 import ProfileView from '@/views/Profile.view.vue';
 import TestView from '@/views/Test.view.vue';
 
