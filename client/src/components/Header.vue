@@ -1,4 +1,8 @@
 <template>
+  <section v-if="loginView == true">
+    <LoginView />
+  </section>
+
   <header class="header-box">
     <router-link to="/" class="dev-head-main">дев.школа</router-link>
 
@@ -13,32 +17,10 @@
       <p class="profile-link">Профиль</p>
     </button>
 
-    <button class="display-button" @click="">  <!--TODO: сделать показ трехлинейной кнопки + ее работу-->
-      <image class="lines-image" src=""></image>
+    <button class="display-button" @click=""> <!--TODO: сделать показ линейной кнопки + ее работу-->
+      ═
     </button>
   </header>
-  
-  <div v-if="loginView == true">
-    <LoginView />
-  </div>
-
-  <!-- LEGACY HEADER
-
-  <header>
-    <div class="logo">
-      <router-link to="/">TUVATEST</router-link>
-    </div>
-    
-    <div class="menu">
-      <router-link v-if="token" to="profile" class="item-menu">ПРОФИЛЬ</router-link>
-      <router-link v-else to="login" class="item-menu">ВОЙТИ</router-link>
-    </div>
-  </header> 
-
-  -->
-
-
-
 </template>
 
 <script setup>
@@ -84,7 +66,7 @@ function profileButton() {
   font-size: 23px;
   font-weight: bolder;
   padding: 0px 0px 0px 30px;
-  color: rgb(32, 32, 32);
+  color: rgb(66, 66, 66);
   text-decoration: none;
 }
 
@@ -103,6 +85,7 @@ function profileButton() {
   background: rgb(245, 245, 245);
   border-radius: 8px;
   padding: 15px 24px;
+  transition: background 0.3s ease;
 }
 
 .nav-bar a:hover {
@@ -140,6 +123,8 @@ function profileButton() {
   display: none;
   padding: 0px 25px;
   cursor: pointer;
+  font-size: 30px;
+
 }
 
 .profile-link:hover {

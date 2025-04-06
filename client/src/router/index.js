@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/Home.view.vue'
-import LoginView from '@/views/auth/Login.view.vue';
 import RegisterView from '@/views/auth/Register.view.vue';
 import ProfileView from '@/views/Profile.view.vue';
 import TestView from '@/views/Test.view.vue';
@@ -10,23 +9,15 @@ const routes = [
     path: '/',
     name: 'home',
     meta: {
-      title: 'Главная',
+      title: 'дев.школа',
     },
     component: HomeView,
-  },
-  {
-    path: '/login',
-    name: 'login',
-    meta: {
-      title: 'Вход',
-    },
-    component: LoginView,
   },
   {
     path: '/registration',
     name: 'registration',
     meta: {
-      title: 'Регистрация',
+      title: 'регистрация',
     },
     component: RegisterView,
   },
@@ -34,7 +25,7 @@ const routes = [
     path: '/profile',
     name: 'profile',
     meta: {
-      title: 'Профиль'
+      title: 'профиль'
     },
     component: ProfileView,
   },
@@ -42,7 +33,7 @@ const routes = [
     path: '/test-train',
     name: 'test-train',
     meta: {
-      title: 'Тренировка'
+      title: 'тестирования'
     },
     component: TestView
   }

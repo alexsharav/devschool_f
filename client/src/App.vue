@@ -5,10 +5,6 @@
 </template>
 
 <style>
-/* ПОДКЛЮЧЕНИЕ ШРИФТОВ */
-
-/* @import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap"); */
-@import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap");
 
 * {
   margin: 0;
