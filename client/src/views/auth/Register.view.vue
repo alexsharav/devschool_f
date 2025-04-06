@@ -1,36 +1,48 @@
 <template>
-    <div class="container">
-        <form name="login">
-            <div class="caption-form">Регистрация</div>
-            <div class="item-form">
-                <label for="surname">Фамилия</label>
-                <input type="text" id="surname" v-model="userData.surname" placeholder="Введите фамилию" />
-            </div>
-            <div class="item-form">
-                <label for="name">Имя</label>
-                <input type="text" id="name" v-model="userData.name" placeholder="Введите имя" />
-            </div>
-            <div class="item-form">
-                <label for="patronimyc">Отчество</label>
-                <input type="text" id="patronimyc" v-model="userData.patronimyc" placeholder="Введите отчество" />
-            </div>
-            <div class="item-form">
-                <label for="number_phone">Номер телефона</label>
-                <input type="number" id="number_phone" v-model="userData.number_phone" placeholder="Введите номер телефона" />
-            </div>
-            <div class="item-form">
-                <label for="email">Эл. почта</label>
-                <input type="email" id="email" v-model="userData.email" placeholder="example@mail.com">
-            </div>
-            <div class="item-form">
-                <label for="password">Пароль</label>
-                <input type="text" id="password" v-model="userData.password" placeholder="Введите пароль">
-            </div>
-            <div class="buttons-form">
-                <button @click="registration">Зарегистрироваться</button>
-                <router-link to="/login">Войти</router-link>
-            </div>
-        </form>
+    <div class="page-div">
+        <div class="register-container">
+            <form name="login">
+                <button class="remover-button" @click="rmvLogin()">
+                    ✖
+                </button>
+
+                <div class="caption-form">Регистрация</div>
+
+                <div class="item-form">
+                    <input type="text" class="input-form" v-model="userData.surname" placeholder="Введите фамилию" />
+                </div>
+
+                <div class="item-form">
+                    <input type="text" class="input-form" v-model="userData.name" placeholder="Введите имя" />
+                </div>
+
+                <div class="item-form">
+                    <input type="text" class="input-form" v-model="userData.patronimyc" placeholder="Введите отчество" />
+                </div>
+
+                <div class="item-form">
+                    <input type="number" class="input-form" v-model="userData.number_phone"
+                        placeholder="Введите номер" />
+                </div>
+
+                <div class="item-form">
+                    <input type="email" class="input-form" v-model="userData.email" placeholder="Введите почту">
+                </div>
+
+                <div class="item-form">
+                    <input type="text" class="input-form" v-model="userData.password" placeholder="Введите пароль">
+                </div>
+
+                <div class="buttons-form">
+                    <button class="reg-button" @click="registration">Зарегистрироваться</button>
+
+                    <button class="login-link" @click="">
+                        <span class="acc">есть аккаунт? - </span>
+                        <span class="auth-question">авторизация</span>
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 </template>
 
@@ -58,32 +70,120 @@ function registration(event) {
         },
         body: JSON.stringify(userData.value),
     })
-    .then((res) => res.json())
-    .then((resData) => {
-        const { statusCode, data, message } = resData;
+        .then((res) => res.json())
+        .then((resData) => {
+            const { statusCode, data, message } = resData;
 
-        switch (statusCode) {
-            case 201:
-                setCookie("tkn", data.token, data.exp);
-                router.push("/");
-                break;
-        
-            default:
-                alert(message);
-                break;
-        }
-    });
+            switch (statusCode) {
+                case 201:
+                    setCookie("tkn", data.token, data.exp);
+                    router.push("/");
+                    break;
+
+                default:
+                    alert(message);
+                    break;
+            }
+        });
 }
 </script>
 
 <style scoped>
-.container {
+.page-div {
+    position: fixed;
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-form{
-    width: 350px;
+.register-container {
+    background: rgb(255, 255, 255);
+    border: 2px solid rgb(199, 198, 198);
+    border-radius: 26px;
+    display: flex;
+    flex-flow: column wrap;
+    width: 400px;
+    height: 700px;
+    box-shadow: 5px 10px 30px 10px rgba(61, 61, 61, 0.432);
+}
+
+.caption-form {
+    padding: 40px 0px 20px 0px;
+    justify-self: center;
+    font-weight: bolder;
+    font-size: 29px;
+    color: rgb(65, 65, 65);
+}
+
+.remover-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 20px;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    top: 10px;
+    right: 20px;
+    color:rgb(63, 63, 63);
+}
+
+.item-form {
+    justify-self: center;
+    padding: 30px 0px 0px 0px;
+}
+
+.input-form {
+    border: none;
+    border-radius: 4px;
+    border-bottom: 2px solid gray;
+    height: 35px;
+    width: 200px;
+    padding: 0px 15px 0px 15px;
+}
+
+.input-form::placeholder {
+    font-weight: bolder;
+}
+
+.buttons-form {
+    display: flex;
+    flex-flow: column wrap;
+    justify-self: center;
+    padding: 55px 0px 0px 0px;
+}
+
+.reg-button {
+    border-radius: 25px;
+    background-color: rgb(37, 37, 37);
+    color: white;
+    border: none;
+    cursor: pointer;
+    height: 50px;
+    width: 200px;
+}
+
+.reg-button:hover {
+    background-color: rgb(87, 87, 87);
+}
+
+.login-link {
+    padding: 30px 0px 0px 0px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.acc {
+    color: rgb(65, 65, 65);
+}
+
+.auth-question {
+    text-decoration-line: underline;
 }
 </style>
-
-

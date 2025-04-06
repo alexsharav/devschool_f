@@ -3,17 +3,21 @@
     <LoginView />
   </section>
 
+  <section v-if="registerView == true">
+    <RegisterView />
+  </section>
+
   <header class="header-box">
     <router-link to="/" class="dev-head-main">дев.школа</router-link>
 
     <nav class="nav-bar display-main">
       <router-link to="/courses">Курсы</router-link>
       <router-link to="/tests">Тесты</router-link>
-      <router-link to="/user-panel">Панель пользователя</router-link>
+      <router-link v-if="token" to="/user-panel">Панель пользователя</router-link>
       <router-link to="/help">Поддержка</router-link>
     </nav>
 
-    <button class="profile-box display-main" @click="profileButton()">
+    <button class="profile-box display-main" @click="profileButton">
       <p class="profile-link">Профиль</p>
     </button>
 
@@ -26,10 +30,12 @@
 <script setup>
 import { getCookie } from "@/utils/cookie";
 import LoginView from "@/views/auth/Login.view.vue";
+import RegisterView from "@/views/auth/Register.view.vue";
 import { ref } from 'vue'
 
 const token = getCookie("tkn");
 const loginView = ref(false);
+const registerView = ref(false);
 
 function profileButton() {
   if (token) {

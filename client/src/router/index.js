@@ -3,6 +3,7 @@ import HomeView from '../views/Home.view.vue'
 import RegisterView from '@/views/auth/Register.view.vue';
 import ProfileView from '@/views/Profile.view.vue';
 import TestView from '@/views/Test.view.vue';
+import LoginView from '@/views/auth/Login.view.vue';
 
 const routes = [
   {
@@ -12,6 +13,14 @@ const routes = [
       title: 'дев.школа',
     },
     component: HomeView,
+  },
+  {
+    path: '/login',
+    name: 'login',
+    meta: {
+      title: 'авторизация',
+    },
+    component: LoginView,
   },
   {
     path: '/registration',

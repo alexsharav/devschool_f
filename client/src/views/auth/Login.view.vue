@@ -17,12 +17,12 @@
                 </div>
 
                 <div class="buttons-form">
-                    <button class="lgn-button" @click="login()"><span style="color: white">Войти</span></button>
+                    <button class="lgn-button" @click="login"><span style="color: white">Войти</span></button>
                     <br>
-                    <router-link class="reg-link" to="/registration">
+                    <button class="reg-link" @click="regBut">
                         <span class="no-acc">нет аккаунта? - </span>
                         <span class="reg-question">регистрация</span>
-                    </router-link>
+                    </button>
                 </div>
             </form>
         </div>
@@ -34,7 +34,8 @@ import { API_SERVER } from '@/constants/API_SERVER.constants';
 import router from '@/router';
 import { setCookie } from '@/utils/cookie';
 import { ref } from 'vue';
-import loginView from '@/components/Header.vue'
+import loginView from '@/components/Header.vue';
+import registerView from '@/components/Header.vue';
 
 const userData = ref({
     login: "",
@@ -69,6 +70,12 @@ function login(event) {
 
 function rmvLogin() {
     loginView.value = false;
+    registerView.value = false;
+}
+
+function regBut() {
+  loginView.value = false;
+  registerView.value = true;
 }
 
 </script>
@@ -88,7 +95,7 @@ function rmvLogin() {
 .login-container {
     background: rgb(245, 245, 245);
     border-radius: 18px;
-    border: 2px solid rgba(160, 160, 160, 0.733);
+    border: 3px solid rgba(160, 160, 160, 0.144);
     height: 460px;
     width: 100vw;
     max-width: 340px;
@@ -116,7 +123,7 @@ function rmvLogin() {
 }
 
 .caption-form {
-    padding: 40px 0px 0px 0px;
+    padding: 45px 0px 0px 0px;
     justify-self: center;
     font-weight: bolder;
     font-size: 29px;
@@ -129,19 +136,19 @@ function rmvLogin() {
 }
 
 .input-form {
-    border: 1px solid rgb(142, 159, 199);
+    border: 1px solid rgba(142, 159, 199, 0.562);
     border-radius: 10px;
     height: 45px;
     width: 240px;
-    justify-content: center;
     background: linear-gradient(135deg, rgb(186, 193, 255), #dcb8ff);
-    padding: 0px 0px 0px 30px;
+    padding: 0px 30px 0px 30px;
 }
 
 .input-form::placeholder {
     color: rgb(102, 102, 102);
     font-weight: bolder;
 }
+
 .buttons-form {
     display: flex;
     flex-flow: column wrap;
@@ -158,14 +165,16 @@ function rmvLogin() {
 }
 
 .lgn-button:hover {
-    background-color: rgb(56, 56, 56);
+    background-color: rgb(87, 87, 87);
 }
 
 .reg-link {
-    padding: 20px;
+    padding: 10px 0px 0px 0px;
     color: rgb(0, 0, 0);
     font-size: 16px;
-    text-decoration-line: none;
+    cursor: pointer;
+    background: none;
+    border: none;
 }
 
 .no-acc {
