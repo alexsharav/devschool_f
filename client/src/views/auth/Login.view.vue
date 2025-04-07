@@ -2,14 +2,14 @@
     <section class="container-page">
         <div class="login-container">
             <form name="login-form">
-                <button class="remover-button" @click="rmvLogin()">
+                <button class="remover-button" @click="rmvBut()">
                     ✖
                 </button>
 
                 <h1 class="caption-form">Авторизация</h1>
 
                 <div class="item-form">
-                    <input type="email" class="input-form" v-model="userData.login" placeholder="Логин" />
+                    <input type="email" class="input-form" v-model="userData.login" placeholder="Почта" />
                 </div>
 
                 <div class="item-form">
@@ -19,10 +19,10 @@
                 <div class="buttons-form">
                     <button class="lgn-button" @click="login"><span style="color: white">Войти</span></button>
                     <br>
-                    <button class="reg-link" @click="regBut">
+                    <router-link class="reg-link" to="/registration">
                         <span class="no-acc">нет аккаунта? - </span>
                         <span class="reg-question">регистрация</span>
-                    </button>
+                    </router-link>
                 </div>
             </form>
         </div>
@@ -34,8 +34,6 @@ import { API_SERVER } from '@/constants/API_SERVER.constants';
 import router from '@/router';
 import { setCookie } from '@/utils/cookie';
 import { ref } from 'vue';
-import loginView from '@/components/Header.vue';
-import registerView from '@/components/Header.vue';
 
 const userData = ref({
     login: "",
@@ -68,14 +66,8 @@ function login(event) {
         });
 }
 
-function rmvLogin() {
-    loginView.value = false;
-    registerView.value = false;
-}
-
-function regBut() {
-  loginView.value = false;
-  registerView.value = true;
+function rmvBut() {
+    window.location = "/";
 }
 
 </script>
@@ -90,6 +82,10 @@ function regBut() {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: 
+        linear-gradient(rgb(252, 220, 244), rgb(212, 203, 253),
+      rgb(203, 208, 253), rgba(183, 208, 253, 0.541),
+      rgba(201, 169, 253, 0.541));
 }
 
 .login-container {
@@ -173,6 +169,7 @@ function regBut() {
     color: rgb(0, 0, 0);
     font-size: 16px;
     cursor: pointer;
+    text-decoration: none;
     background: none;
     border: none;
 }

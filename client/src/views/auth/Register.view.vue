@@ -2,7 +2,7 @@
     <div class="page-div">
         <div class="register-container">
             <form name="login">
-                <button class="remover-button" @click="rmvLogin()">
+                <button class="remover-button" @click="rmvBut()">
                     ✖
                 </button>
 
@@ -36,10 +36,10 @@
                 <div class="buttons-form">
                     <button class="reg-button" @click="registration">Зарегистрироваться</button>
 
-                    <button class="login-link" @click="">
+                    <router-link class="login-link" to="/login">
                         <span class="acc">есть аккаунт? - </span>
                         <span class="auth-question">авторизация</span>
-                    </button>
+                    </router-link>
                 </div>
             </form>
         </div>
@@ -86,9 +86,15 @@ function registration(event) {
             }
         });
 }
+
+function rmvBut() {
+    window.location = "/";
+}
+
 </script>
 
 <style scoped>
+
 .page-div {
     position: fixed;
     z-index: 2;
@@ -97,6 +103,10 @@ function registration(event) {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: 
+        linear-gradient(rgb(252, 220, 244), rgb(212, 203, 253),
+      rgb(203, 208, 253), rgba(183, 208, 253, 0.541),
+      rgba(201, 169, 253, 0.541));
 }
 
 .register-container {
@@ -176,6 +186,7 @@ function registration(event) {
     font-size: 16px;
     cursor: pointer;
     background: none;
+    text-decoration: none;
     border: none;
 }
 

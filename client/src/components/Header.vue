@@ -1,12 +1,4 @@
 <template>
-  <section v-if="loginView == true">
-    <LoginView />
-  </section>
-
-  <section v-if="registerView == true">
-    <RegisterView />
-  </section>
-
   <header class="header-box">
     <router-link to="/" class="dev-head-main">дев.школа</router-link>
 
@@ -31,17 +23,15 @@
 import { getCookie } from "@/utils/cookie";
 import LoginView from "@/views/auth/Login.view.vue";
 import RegisterView from "@/views/auth/Register.view.vue";
-import { ref } from 'vue'
+import { ref } from 'vue';
 
 const token = getCookie("tkn");
-const loginView = ref(false);
-const registerView = ref(false);
 
 function profileButton() {
   if (token) {
     window.location = "/profile";
   } else {
-    loginView.value = true;
+    window.location = "/login"
   }
 }
 
