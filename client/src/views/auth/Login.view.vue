@@ -2,23 +2,27 @@
     <section class="container-page">
         <div class="login-container">
             <form name="login-form">
-                <button class="remover-button" @click="rmvBut()">
+                <button class="remover-button" @click="()=>{router.push({path: '/'})}">
                     ✖
                 </button>
 
                 <h1 class="caption-form">Авторизация</h1>
 
                 <div class="item-form">
-                    <input type="email" class="input-form" v-model="userData.login" placeholder="Почта" />
+                    <input type="email" id="login" class="input-form" v-model="userData.login" placeholder="Почта" />
                 </div>
 
                 <div class="item-form">
-                    <input type="password" class="input-form" v-model="userData.password" placeholder="Пароль" />
+                    <input type="password" id="password" class="input-form" v-model="userData.password" placeholder="Пароль" />
                 </div>
 
                 <div class="buttons-form">
-                    <button class="lgn-button" @click="login"><span style="color: white">Войти</span></button>
+                    <div class="lgn-button" @click="login()">
+                        <span style="color: white">Войти</span>
+                    </div>
+
                     <br>
+
                     <router-link class="reg-link" to="/registration">
                         <span class="no-acc">нет аккаунта? - </span>
                         <span class="reg-question">регистрация</span>
@@ -56,7 +60,7 @@ function login(event) {
             switch (statusCode) {
                 case 200:
                     setCookie("tkn", data.token, data.exp);
-                    router.push("/");
+                    router.push("/profile");
                     break;
 
                 default:
@@ -64,10 +68,6 @@ function login(event) {
                     break;
             }
         });
-}
-
-function rmvBut() {
-    window.location = "/";
 }
 
 </script>
@@ -83,8 +83,8 @@ function rmvBut() {
     justify-content: center;
     align-items: center;
     background: 
-        linear-gradient(rgb(252, 220, 244), rgb(212, 203, 253),
-      rgb(203, 208, 253), rgba(183, 208, 253, 0.541),
+        linear-gradient(rgb(207, 183, 252), rgb(204, 194, 250),
+      rgb(203, 208, 253), rgba(190, 183, 253, 0.541),
       rgba(201, 169, 253, 0.541));
 }
 
@@ -157,6 +157,8 @@ function rmvBut() {
     background-color: rgb(37, 37, 37);
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
     height: 40px;
 }
 

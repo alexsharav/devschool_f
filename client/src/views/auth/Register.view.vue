@@ -2,7 +2,7 @@
     <div class="page-div">
         <div class="register-container">
             <form name="login">
-                <button class="remover-button" @click="rmvBut()">
+                <button class="remover-button" @click="()=>{router.push({path: '/'})}">
                     ✖
                 </button>
 
@@ -17,12 +17,12 @@
                 </div>
 
                 <div class="item-form">
-                    <input type="text" class="input-form" v-model="userData.patronimyc" placeholder="Введите отчество" />
+                    <input type="text" class="input-form" v-model="userData.patronimyc"
+                        placeholder="Введите отчество" />
                 </div>
 
                 <div class="item-form">
-                    <input type="number" class="input-form" v-model="userData.number_phone"
-                        placeholder="Введите номер" />
+                    <input type="tel" class="input-form" v-model="userData.number_phone" placeholder="Введите номер" />
                 </div>
 
                 <div class="item-form">
@@ -77,7 +77,7 @@ function registration(event) {
             switch (statusCode) {
                 case 201:
                     setCookie("tkn", data.token, data.exp);
-                    router.push("/");
+                    router.push("/profile");
                     break;
 
                 default:
@@ -87,14 +87,9 @@ function registration(event) {
         });
 }
 
-function rmvBut() {
-    window.location = "/";
-}
-
 </script>
 
 <style scoped>
-
 .page-div {
     position: fixed;
     z-index: 2;
@@ -104,8 +99,8 @@ function rmvBut() {
     justify-content: center;
     align-items: center;
     background: 
-        linear-gradient(rgb(252, 220, 244), rgb(212, 203, 253),
-      rgb(203, 208, 253), rgba(183, 208, 253, 0.541),
+        linear-gradient(rgb(207, 183, 252), rgb(204, 194, 250),
+      rgb(203, 208, 253), rgba(190, 183, 253, 0.541),
       rgba(201, 169, 253, 0.541));
 }
 
@@ -138,7 +133,7 @@ function rmvBut() {
     margin-left: auto;
     top: 10px;
     right: 20px;
-    color:rgb(63, 63, 63);
+    color: rgb(63, 63, 63);
 }
 
 .item-form {

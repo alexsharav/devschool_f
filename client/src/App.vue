@@ -14,7 +14,7 @@
 }
 
 body {
-  background: #ebe8f7;
+  background: #f3f3f3e3;
 }
 
 .all-flex {

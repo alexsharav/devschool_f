@@ -1,23 +1,41 @@
 <template>
-  <Header />
-  
-  <section class="tab">
-    <h1 class="dev-tab-main-text">дев.школа</h1>
-    <p class="dev-tab-desc">система образовательных курсов и тестов</p>
+    <Header />
 
-    <button class="dev-tab-start" @click="()=>{router.push({path: '/courses'})}">
-      <p class="dev-tab-courses dev-tab-courses-text">айти с нами с нуля</p>
-      <p class="dev-tab-courses dev-tab-courses-line">→</p>
-    </button>
-  </section>
-</template> 
+    <section class="tab">
+        <h1 class="dev-tab-main-text">дев.школа</h1>
+        <p class="dev-tab-desc">система образовательных курсов и тестов</p>
+
+        <button class="dev-tab-start" @click="coursesLink">
+            <p class="dev-tab-courses dev-tab-courses-text">айти с нами с нуля</p>
+            <p class="dev-tab-courses dev-tab-courses-line">→</p>
+        </button>
+    </section>
+
+    <section class="description">
+        <div class="first-desc">
+
+        </div>
+
+        <div class="second-desc">
+
+        </div>
+
+        <div class="third-desc">
+
+        </div>
+    </section>
+</template>
 
 <script setup>
 import Header from "@/components/Header.vue";
+
+function coursesLink() {
+    window.location = "/courses";
+}
+
 </script>
 
 <style scoped>
-
 .tab {
     position: relative;
     top: 14px;
@@ -26,11 +44,11 @@ import Header from "@/components/Header.vue";
     flex-flow: column wrap;
     width: 98%;
     height: 750px;
-    background: 
-        linear-gradient(rgb(186, 179, 248), rgb(201, 173, 253),
-      rgb(237, 217, 255), rgba(231, 196, 255, 0.541),
-      rgba(183, 140, 253, 0.541));
-    border: 2px solid rgba(241, 214, 253, 0.541);
+    background:
+        linear-gradient(rgb(252, 220, 244), rgb(212, 203, 253),
+            rgb(203, 208, 253), rgba(183, 208, 253, 0.541),
+            rgba(201, 169, 253, 0.541));
+    border: 2px solid rgba(237, 204, 252, 0.541);
     border-radius: 30px;
 }
 
@@ -47,7 +65,7 @@ import Header from "@/components/Header.vue";
     padding: 10px 0px;
     top: 260px;
     font-size: 20px;
-    color:rgb(90, 90, 90);
+    color: rgb(90, 90, 90);
 }
 
 .dev-tab-start {
@@ -100,7 +118,7 @@ import Header from "@/components/Header.vue";
     .dev-tab-start {
         top: 280px;
     }
-    
+
     .tab {
         height: 600px;
     }
@@ -113,17 +131,16 @@ import Header from "@/components/Header.vue";
     }
 
     .dev-tab-main-text {
-      font-size: 36px;
+        font-size: 36px;
         top: 180px;
     }
 
     .dev-tab-start {
         top: 240px;
     }
-    
+
     .tab {
         height: 500px;
     }
 }
-
 </style>

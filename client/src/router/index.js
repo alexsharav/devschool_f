@@ -2,8 +2,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/Home.view.vue'
 import RegisterView from '@/views/auth/Register.view.vue';
 import ProfileView from '@/views/Profile.view.vue';
-import TestView from '@/views/Test.view.vue';
+// import TestView from '@/views/Test.view.vue';
 import LoginView from '@/views/auth/Login.view.vue';
+import CoursesView from '@/views/Courses.view.vue';
+import HelpView from '@/views/Help.view.vue';
+import TestsView from '@/views/Tests.view.vue';
+import UserPanelView from '@/views/UserPanel.view.vue';
+
 
 const routes = [
   {
@@ -34,17 +39,49 @@ const routes = [
     path: '/profile',
     name: 'profile',
     meta: {
-      title: 'профиль'
+      title: 'профиль',
     },
     component: ProfileView,
   },
+  // {
+  //   path: '/test-train',
+  //   name: 'test-train',
+  //   meta: {
+  //     title: 'тестирования',
+  //   },
+  //   component: TestView,
+  // },
   {
-    path: '/test-train',
-    name: 'test-train',
+    path: '/courses',
+    name: 'courses',
     meta: {
-      title: 'тестирования'
+      title: 'курсы',
     },
-    component: TestView
+    component: CoursesView,
+  },
+  {
+    path: '/help',
+    name: 'help',
+    meta: {
+      title: 'поддержка',
+    },
+    component: HelpView,
+  },
+  {
+    path: '/tests',
+    name: 'tests',
+    meta: {
+      title: 'тесты'
+    },
+    component: TestsView
+  },
+  {
+    path: '/user-panel',
+    name: 'user-panel',
+    meta: {
+      title: 'панель пользователя'
+    },
+    component: UserPanelView
   }
 ]
 

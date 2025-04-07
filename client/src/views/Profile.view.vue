@@ -1,4 +1,5 @@
 <template>
+
   <header>
     <div class="caption">Профиль</div>
     <div v-if="!token">
@@ -11,6 +12,7 @@
       <div id="balance">{{ userData.balance }} {{ userData.currency }}</div>
     </div>
   </header>
+
   <main>
     <form v-if="token">
       <div class="item-form" style="flex-direction: column">
@@ -33,6 +35,7 @@
 import { ref } from "vue";
 import { getCookie } from "@/utils/cookie";
 import { API_SERVER } from "@/constants/API_SERVER.constants";
+import Header from "@/components/Header.vue";
 
 const token = getCookie("tkn");
 const userData = ref({
