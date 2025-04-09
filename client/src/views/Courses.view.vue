@@ -5,9 +5,9 @@
     <h1 class="dev-tab-main-text">выбирай своё будущее</h1>
     <p class="dev-tab-desc">множество интересных курсов</p>
   </section>
-  
+
   <section class="course-info">
-    
+
   </section>
 </template>
 
@@ -24,19 +24,18 @@ import Header from "@/components/Header.vue";
   flex-flow: column wrap;
   width: 98%;
   height: 500px;
-  background:
-    linear-gradient(rgb(255, 248, 183), rgb(248, 253, 203),
-      rgb(238, 255, 177), rgba(253, 215, 109, 0.541),
-      rgba(255, 210, 113, 0.541));
-  border: 2px solid rgba(255, 227, 174, 0.438);
+  background-image:
+    repeating-radial-gradient(circle at 0 0, transparent 0, rgb(132, 253, 162) 10px), repeating-linear-gradient(rgb(172, 255, 179), rgb(169, 255, 202));
+  border: 2px solid rgba(0, 255, 98, 0.541);
   border-radius: 30px;
+
 }
 
 .dev-tab-main-text {
   position: relative;
   top: 200px;
   font-size: 50px;
-  font-weight: normal;
+  font-weight: bold;
   color: rgb(41, 41, 41);
 }
 

@@ -5,7 +5,6 @@
 </template>
 
 <style>
-
 * {
   margin: 0;
   padding: 0;
@@ -14,12 +13,14 @@
 }
 
 body {
-  background: #f3f3f3e3;
+  background-color: #ffffff;
+  background-color: #ffffff;
+  background-image: radial-gradient(#2f2f2f36 0.8px, #ffffff 0.8px);
+  background-size: 16px 16px;
 }
 
 .all-flex {
   display: flex;
   justify-content: center;
 }
-
 </style>

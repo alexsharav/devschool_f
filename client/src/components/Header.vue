@@ -53,8 +53,8 @@ function profileButton() {
   max-width: 1200px;
   min-height: 64px;
   padding: 4px 4px;
-  background: rgb(245, 245, 245);
-  border: 3px solid rgba(192, 191, 191, 0.644);
+  background: rgb(255, 255, 255);
+  border: 3px solid rgba(49, 49, 49, 0.116);
   border-radius: 16px;
 }
 
@@ -78,15 +78,15 @@ function profileButton() {
   color: rgb(95, 95, 95);
   font-size: 16px;
   border: none;
-  background: rgb(245, 245, 245);
+  background: rgb(255, 255, 255);
   border-radius: 8px;
   padding: 15px 24px;
   transition: background 0.3s ease;
 }
 
 .nav-bar a:hover {
-  background: rgba(189, 189, 189, 0.253);
-  color: rgb(32, 32, 32);
+  background: rgba(216, 216, 216, 0.253);
+  color: rgb(0, 0, 0);
 }
 
 .profile-box {

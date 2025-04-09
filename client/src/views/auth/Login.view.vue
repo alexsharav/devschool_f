@@ -1,8 +1,10 @@
 <template>
+    <BackgroundAnimation />
+
     <section class="container-page">
         <div class="login-container">
             <form name="login-form">
-                <button class="remover-button" @click="()=>{router.push({path: '/'})}">
+                <button class="remover-button" @click="pushHome()">
                     ✖
                 </button>
 
@@ -38,6 +40,7 @@ import { API_SERVER } from '@/constants/API_SERVER.constants';
 import router from '@/router';
 import { setCookie } from '@/utils/cookie';
 import { ref } from 'vue';
+import BackgroundAnimation from '../BackgroundAnimation.vue';
 
 const userData = ref({
     login: "",
@@ -70,39 +73,38 @@ function login(event) {
         });
 }
 
+function pushHome() {
+    router.push({path: '/'});
+}
 </script>
 
 <style scoped>
 
 .container-page {
-    position: fixed;
     z-index: 2;
     height: 100vh;
     width: 100vw;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    background: 
-        linear-gradient(rgb(207, 183, 252), rgb(204, 194, 250),
-      rgb(203, 208, 253), rgba(190, 183, 253, 0.541),
-      rgba(201, 169, 253, 0.541));
+    background: rgba(255, 255, 255, 0.753);
 }
 
 .login-container {
-    background: rgb(245, 245, 245);
-    border-radius: 18px;
-    border: 3px solid rgba(160, 160, 160, 0.144);
-    height: 460px;
+    background: rgb(255, 255, 255);
+    border: 2px solid rgba(199, 198, 198, 0.336);
+    height: 100vh;
     width: 100vw;
-    max-width: 340px;
+    max-width: 500px;
     display: flex;
-    flex-flow: column wrap;
-    box-shadow: 5px 10px 30px 10px rgba(61, 61, 61, 0.432);
+    flex-flow: column;
+    box-shadow: 2px 10px 30px 10px rgba(61, 61, 61, 0.212);
+    overflow: auto;
 }
 
 .login-form {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
 }
 
 .remover-button {
@@ -119,7 +121,7 @@ function login(event) {
 }
 
 .caption-form {
-    padding: 45px 0px 0px 0px;
+    padding: 20vh 0px 0px 0px;
     justify-self: center;
     font-weight: bolder;
     font-size: 29px;
@@ -132,11 +134,10 @@ function login(event) {
 }
 
 .input-form {
-    border: 1px solid rgba(142, 159, 199, 0.562);
-    border-radius: 10px;
+    border: none;
+    border-bottom: 2px solid gray;
     height: 45px;
     width: 240px;
-    background: linear-gradient(135deg, rgb(186, 193, 255), #dcb8ff);
     padding: 0px 30px 0px 30px;
 }
 
@@ -147,7 +148,7 @@ function login(event) {
 
 .buttons-form {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
     justify-self: center;
     padding: 55px 0px 0px 0px;
 }
@@ -157,7 +158,6 @@ function login(event) {
     background-color: rgb(37, 37, 37);
     border: none;
     cursor: pointer;
-    display: flex;
     align-items: center;
     height: 40px;
     justify-content: center;
@@ -168,7 +168,7 @@ function login(event) {
 }
 
 .reg-link {
-    padding: 10px 0px 0px 0px;
+    padding: 10px 0px 22px 0px;
     color: rgb(0, 0, 0);
     font-size: 16px;
     cursor: pointer;

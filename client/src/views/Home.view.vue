@@ -1,23 +1,31 @@
 <template>
-  <Header />
-  
-  <section class="tab">
-    <h1 class="dev-tab-main-text">дев.школа</h1>
-    <p class="dev-tab-desc">система образовательных курсов и тестов</p>
+    <Header />
 
-    <button class="dev-tab-start" @click="()=>{router.push({path: '/courses'})}">
-      <p class="dev-tab-courses dev-tab-courses-text">айти с нами с нуля</p>
-      <p class="dev-tab-courses dev-tab-courses-line">→</p>
-    </button>
-  </section>
-</template> 
+    <section class="tab">
+        <h1 class="dev-tab-main-text">дев.школа</h1>
+        <p class="dev-tab-desc">система образовательных курсов и тестов</p>
+        <div class="button-flex">
+            <button class="dev-tab-start" @click="pushee('/courses')">
+                <p class="dev-tab-courses">начни с наших курсов</p>
+            </button>
+
+            <button class="dev-tab-start-tests" @click="pushee('/tests')">
+                <p class="dev-tab-tests">начни с наших тестов</p>
+            </button>
+        </div>
+    </section>
+</template>
 
 <script setup>
 import Header from "@/components/Header.vue";
+import router from '@/router';
+
+function pushee(pushing) {
+    router.push({path: pushing});
+}
 </script>
 
 <style scoped>
-
 .tab {
     position: relative;
     top: 14px;
@@ -26,11 +34,9 @@ import Header from "@/components/Header.vue";
     flex-flow: column wrap;
     width: 98%;
     height: 750px;
-    background: 
-        linear-gradient(rgb(186, 179, 248), rgb(201, 173, 253),
-      rgb(237, 217, 255), rgba(231, 196, 255, 0.541),
-      rgba(183, 140, 253, 0.541));
-    border: 2px solid rgba(241, 214, 253, 0.541);
+    background-image:
+        repeating-radial-gradient(circle at 0 0, transparent 0, rgb(156, 206, 253) 10px), repeating-linear-gradient(rgb(182, 202, 255), rgb(187, 219, 255));
+    border: 2px solid rgba(108, 98, 255, 0.541);
     border-radius: 30px;
 }
 
@@ -38,7 +44,7 @@ import Header from "@/components/Header.vue";
     position: relative;
     top: 240px;
     font-size: 50px;
-    font-weight: normal;
+    font-weight: bold;
     color: rgb(41, 41, 41);
 }
 
@@ -47,7 +53,7 @@ import Header from "@/components/Header.vue";
     padding: 10px 0px;
     top: 260px;
     font-size: 20px;
-    color:rgb(90, 90, 90);
+    color: rgb(90, 90, 90);
 }
 
 .dev-tab-start {
@@ -67,30 +73,54 @@ import Header from "@/components/Header.vue";
 
 .dev-tab-courses {
     color: white;
-    font-size: 17px;
-    font-weight: 600;
+    font-size: 20px;
     text-decoration: none;
-    padding: 20px 14px;
-}
-
-.dev-tab-courses-text {
-    padding: 0px 2px 0px 14px;
-}
-
-.dev-tab-courses-line {
-    padding: 0px 14px 2px 6px;
+    border-radius: 18px;
+    padding: 0px 15px;
 }
 
 .dev-tab-start:hover {
-    background: rgb(61, 61, 61);
-    gap: 20px;
+    background: rgb(51, 51, 51);
+}
+
+.dev-tab-start-tests {
+    position: relative;
+    top: 320px;
+    border-radius: 12px;
+    display: flex;
+    flex-flow: row wrap;
+    background: rgb(248, 248, 248);
+    gap: 0px;
+    padding: 20px 0px;
+    align-items: center;
+    transition: gap 0.4s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.dev-tab-tests {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 18px;
+    padding: 0px 15px;
+}
+
+.dev-tab-start-tests:hover {
+    background: rgb(233, 233, 233);
 }
 
 .dev-tab-devschool {
-    color:rgba(240, 248, 255, 0);
+    color: rgba(240, 248, 255, 0);
     -webkit-text-stroke: 0.5px rgb(224, 224, 224);
     font-size: 100px;
     font-weight: bolder;
+}
+
+.button-flex {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
 }
 
 @media (max-width: 700px) {
@@ -104,12 +134,17 @@ import Header from "@/components/Header.vue";
         top: 220px;
     }
 
-    .dev-tab-start {
+    .dev-tab-start,
+    .dev-tab-start-tests {
         top: 280px;
     }
-    
+
     .tab {
         height: 600px;
+    }
+
+    .button-flex {
+        flex-flow: column wrap;
     }
 }
 
@@ -120,17 +155,17 @@ import Header from "@/components/Header.vue";
     }
 
     .dev-tab-main-text {
-      font-size: 36px;
+        font-size: 36px;
         top: 180px;
     }
 
-    .dev-tab-start {
+    .dev-tab-start,
+    .dev-tab-start-tests {
         top: 240px;
     }
-    
+
     .tab {
         height: 500px;
     }
 }
-
 </style>

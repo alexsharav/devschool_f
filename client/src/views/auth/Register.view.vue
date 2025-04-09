@@ -1,8 +1,10 @@
 <template>
+    <BackgroundAnimation />
+
     <div class="page-div">
         <div class="register-container">
             <form name="login">
-                <button class="remover-button" @click="()=>{router.push({path: '/'})}">
+                <button class="remover-button" @click="pushHome()">
                     ✖
                 </button>
 
@@ -51,6 +53,7 @@ import { API_SERVER } from '@/constants/API_SERVER.constants';
 import router from '@/router';
 import { setCookie } from '@/utils/cookie';
 import { ref } from 'vue';
+import BackgroundAnimation from '../BackgroundAnimation.vue';
 
 const userData = ref({
     surname: "",
@@ -87,32 +90,32 @@ function registration(event) {
         });
 }
 
+function pushHome() {
+    router.push({path: '/'});
+}
 </script>
 
 <style scoped>
 .page-div {
-    position: fixed;
     z-index: 2;
     height: 100vh;
     width: 100vw;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    background: 
-        linear-gradient(rgb(207, 183, 252), rgb(204, 194, 250),
-      rgb(203, 208, 253), rgba(190, 183, 253, 0.541),
-      rgba(201, 169, 253, 0.541));
+    background: rgba(255, 255, 255, 0.753);
 }
 
 .register-container {
     background: rgb(255, 255, 255);
-    border: 2px solid rgb(199, 198, 198);
-    border-radius: 26px;
+    border: 2px solid rgba(199, 198, 198, 0.555);
     display: flex;
-    flex-flow: column wrap;
-    width: 400px;
-    height: 700px;
-    box-shadow: 5px 10px 30px 10px rgba(61, 61, 61, 0.432);
+    flex-flow: column;
+    width: 100vw;
+    max-width: 500px;
+    height: 100vh;
+    box-shadow: 2px 10px 30px 10px rgba(61, 61, 61, 0.212);
+    overflow: auto;
 }
 
 .caption-form {
@@ -143,7 +146,6 @@ function registration(event) {
 
 .input-form {
     border: none;
-    border-radius: 4px;
     border-bottom: 2px solid gray;
     height: 35px;
     width: 200px;
@@ -156,7 +158,7 @@ function registration(event) {
 
 .buttons-form {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
     justify-self: center;
     padding: 55px 0px 0px 0px;
 }
@@ -176,7 +178,7 @@ function registration(event) {
 }
 
 .login-link {
-    padding: 30px 0px 0px 0px;
+    padding: 30px 0px 22px 0px;
     color: rgb(0, 0, 0);
     font-size: 16px;
     cursor: pointer;
