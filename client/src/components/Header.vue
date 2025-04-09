@@ -2,7 +2,8 @@
   <header class="header-box">
     <router-link to="/" class="dev-head-main">дев.школа</router-link>
 
-    <nav class="nav-bar display-main">
+    <!-- Навигация (отображается по ширине экрана или при открытом меню) -->
+    <nav :class="['nav-bar', { 'nav-visible': showMenu }]" v-show="showMenu || windowWidth > 930">
       <router-link to="/courses">Курсы</router-link>
       <router-link to="/tests">Тесты</router-link>
       <router-link v-if="token" to="/user-panel">Панель пользователя</router-link>
@@ -13,17 +14,22 @@
       <p class="profile-link">Профиль</p>
     </button>
 
-    <button class="display-button" @click=""> <!--TODO: сделать показ линейной кнопки + ее работу-->
+    <!-- Кнопка-гамбургер -->
+    <button class="display-button" @click="toggleMenu">
       ═
     </button>
   </header>
 </template>
 
 <script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { getCookie } from "@/utils/cookie";
 import router from "@/router";
+
+// Получение токена
 const token = getCookie("tkn");
 
+// Переход по кнопке "Профиль"
 function profileButton() {
   if (token) {
     router.push('/profile');
@@ -32,6 +38,28 @@ function profileButton() {
   }
 }
 
+// Управление бургер-меню
+const showMenu = ref(false);
+const windowWidth = ref(window.innerWidth);
+
+function toggleMenu() {
+  showMenu.value = !showMenu.value;
+}
+
+function handleResize() {
+  windowWidth.value = window.innerWidth;
+  if (window.innerWidth > 930) {
+    showMenu.value = false;
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', handleResize);
+});
 </script>
 
 <style scoped>
@@ -105,9 +133,8 @@ function profileButton() {
   text-decoration: none;
 }
 
-.lines-image {
-  height: 25px;
-  width: 25px;
+.profile-link:hover {
+  background: #444;
 }
 
 .display-button {
@@ -117,11 +144,6 @@ function profileButton() {
   padding: 0px 25px;
   cursor: pointer;
   font-size: 30px;
-
-}
-
-.profile-link:hover {
-  background: #444;
 }
 
 .display-login {
@@ -135,6 +157,25 @@ function profileButton() {
 
   .display-button {
     display: block;
+  }
+
+  .nav-bar {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    padding: 10px 0;
+    gap: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+  }
+
+  .nav-visible {
+    display: flex !important;
   }
 }
 </style>
