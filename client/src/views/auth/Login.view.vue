@@ -161,6 +161,7 @@ function pushHome() {
     align-items: center;
     height: 40px;
     justify-content: center;
+    transition: background-color 0.5s ease;
 }
 
 .lgn-button:hover {

@@ -63,8 +63,7 @@ function pushee(pushing) {
     display: flex;
     flex-flow: row wrap;
     background: rgb(32, 32, 32);
-    gap: 0px;
-    padding: 20px 0px;
+    padding: 16px 0px;
     align-items: center;
     transition: gap 0.4s ease;
     cursor: pointer;
@@ -73,10 +72,12 @@ function pushee(pushing) {
 
 .dev-tab-courses {
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     text-decoration: none;
+    font-weight: bold;
     border-radius: 18px;
     padding: 0px 15px;
+    transition: background-color 0.5 ease;
 }
 
 .dev-tab-start:hover {
@@ -89,19 +90,19 @@ function pushee(pushing) {
     border-radius: 12px;
     display: flex;
     flex-flow: row wrap;
+    padding: 16px 0px;
     background: rgb(248, 248, 248);
     gap: 0px;
-    padding: 20px 0px;
     align-items: center;
-    transition: gap 0.4s ease;
     cursor: pointer;
     border: none;
 }
 
 .dev-tab-tests {
     color: rgb(0, 0, 0);
-    font-size: 20px;
+    font-size: 16px;
     text-decoration: none;
+    font-weight: bold;
     border-radius: 18px;
     padding: 0px 15px;
 }

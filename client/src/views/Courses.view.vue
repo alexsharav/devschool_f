@@ -26,7 +26,7 @@ import Header from "@/components/Header.vue";
   height: 500px;
   background-image:
     repeating-radial-gradient(circle at 0 0, transparent 0, rgb(132, 253, 162) 10px), repeating-linear-gradient(rgb(172, 255, 179), rgb(169, 255, 202));
-  border: 2px solid rgba(0, 255, 98, 0.541);
+  border: 2px solid rgb(0, 219, 66);
   border-radius: 30px;
 
 }

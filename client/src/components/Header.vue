@@ -21,17 +21,14 @@
 
 <script setup>
 import { getCookie } from "@/utils/cookie";
-import LoginView from "@/views/auth/Login.view.vue";
-import RegisterView from "@/views/auth/Register.view.vue";
-import { ref } from 'vue';
-
+import router from "@/router";
 const token = getCookie("tkn");
 
 function profileButton() {
   if (token) {
-    window.location = "/profile";
+    router.push('/profile');
   } else {
-    window.location = "/login"
+    router.push('/login');
   }
 }
 

@@ -171,6 +171,7 @@ function pushHome() {
     cursor: pointer;
     height: 50px;
     width: 200px;
+    transition: background-color 0.5s ease;
 }
 
 .reg-button:hover {
