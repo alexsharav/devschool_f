@@ -21,6 +21,7 @@ body {
 
 .all-flex {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-flow: column;
 }
 </style>

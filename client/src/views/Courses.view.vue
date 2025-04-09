@@ -3,11 +3,14 @@
 
   <section class="tab">
     <h1 class="dev-tab-main-text">выбирай своё будущее</h1>
-    <p class="dev-tab-desc">множество интересных курсов</p>
+    <p class="dev-tab-desc">лучшие курсы по программированию</p>
   </section>
 
-  <section class="course-info">
-
+  <section class="python-tab">
+    <div class="python-course"></div>
+    
+    <div class="python-course-desc"></div>
+    <h1>Программирование на языке Python</h1>
   </section>
 </template>
 
@@ -45,6 +48,25 @@ import Header from "@/components/Header.vue";
   top: 220px;
   font-size: 20px;
   color: rgb(90, 90, 90);
+}
+
+.python-tab {
+  padding: 40px 0px 40px 0px;
+  display: flex;
+  flex-flow:row;
+  gap: 40px;
+  
+}
+.python-course {
+  background-image:url(courses-python-bg.png);
+  border: 50px solid rgb(209, 255, 209);
+  border-bottom-width: 0px;
+  border-radius: 18px;
+  position: relative;
+  background-color: #ffffc9;
+  width: 700px;
+  height: 350px;
+  background-size: contain;
 }
 
 @media (max-width: 700px) {

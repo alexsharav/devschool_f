@@ -87,7 +87,7 @@ function pushHome() {
     display: flex;
     justify-content: left;
     align-items: center;
-    background: rgba(255, 255, 255, 0.753);
+    background: rgba(139, 139, 139, 0.192);
 }
 
 .login-container {
@@ -98,7 +98,7 @@ function pushHome() {
     max-width: 500px;
     display: flex;
     flex-flow: column;
-    box-shadow: 2px 10px 30px 10px rgba(61, 61, 61, 0.212);
+    box-shadow: 2px 10px 30px 10px rgba(255, 255, 255, 0.212);
     overflow: auto;
 }
 

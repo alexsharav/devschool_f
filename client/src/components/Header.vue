@@ -2,7 +2,6 @@
   <header class="header-box">
     <router-link to="/" class="dev-head-main">дев.школа</router-link>
 
-    <!-- Навигация (отображается по ширине экрана или при открытом меню) -->
     <nav :class="['nav-bar', { 'nav-visible': showMenu }]" v-show="showMenu || windowWidth > 930">
       <router-link to="/courses">Курсы</router-link>
       <router-link to="/tests">Тесты</router-link>
@@ -14,7 +13,6 @@
       <p class="profile-link">Профиль</p>
     </button>
 
-    <!-- Кнопка-гамбургер -->
     <button class="display-button" @click="toggleMenu">
       ═
     </button>

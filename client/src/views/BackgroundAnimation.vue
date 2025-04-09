@@ -53,7 +53,7 @@
           // Рисуем саму точку
           ctx.beginPath();
           ctx.arc(p.x, p.y, POINT_SIZE, 0, 2 * Math.PI);
-          ctx.fillStyle = '#000000'; // Цвет точек
+          ctx.fillStyle = '#ffffff'; // Цвет точек
           ctx.fill();
   
           // Соединяем линиями с ближайшими точками
@@ -63,7 +63,7 @@
   
             if (d < MAX_DIST) {
               const alpha = 1 - d / MAX_DIST; // Чем дальше, тем более прозрачная линия
-              ctx.strokeStyle = `rgba(0,0,0,${alpha})`;
+              ctx.strokeStyle = `rgba(255,255,255,${alpha})`;
               ctx.beginPath();
               ctx.moveTo(p.x, p.y);
               ctx.lineTo(p2.x, p2.y);
@@ -122,7 +122,7 @@
     /* Ставим слой позади */
     z-index: -1;
     /* Если хотите, можно задать цвет фона под анимацией */
-    background: #ffffff;
+    background: #000000;
   }
   </style>
   
