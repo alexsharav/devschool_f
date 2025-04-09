@@ -17,9 +17,9 @@
                 </div>
 
                 <div class="buttons-form">
-                    <div class="lgn-button" @click="login()">
+                    <button class="lgn-button" @click="login()">
                         <span style="color: white">Войти</span>
-                    </div>
+                    </button>
 
                     <br>
 
@@ -160,6 +160,7 @@ function login(event) {
     display: flex;
     align-items: center;
     height: 40px;
+    justify-content: center;
 }
 
 .lgn-button:hover {

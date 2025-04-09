@@ -86,6 +86,13 @@ import Header from "@/components/Header.vue";
     gap: 20px;
 }
 
+.dev-tab-devschool {
+    color:rgba(240, 248, 255, 0);
+    -webkit-text-stroke: 0.5px rgb(224, 224, 224);
+    font-size: 100px;
+    font-weight: bolder;
+}
+
 @media (max-width: 700px) {
     .dev-tab-desc {
         font-size: 17px;
