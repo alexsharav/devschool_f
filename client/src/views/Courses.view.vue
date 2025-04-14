@@ -7,11 +7,12 @@
   </section>
 
   <section class="python-tab">
-    <div class="python-course"></div>
-    
-    <div class="python-course-desc"></div>
-    <h1>Программирование на языке Python</h1>
+    <img class="python-course" :src="require('@/views/bgImages/courses-python-bg.png')" alt="Logo">
+    <h1 class="python-course-text">Программирование на языке Python</h1>
+    <p class="python-course-description"></p>
   </section>
+
+  <section class=""></section>
 </template>
 
 <script setup>
@@ -51,25 +52,28 @@ import Header from "@/components/Header.vue";
 }
 
 .python-tab {
-  padding: 40px 0px 40px 0px;
+  padding: 60px 0;
   display: flex;
-  flex-flow:row;
-  gap: 40px;
-  
-}
-.python-course {
-  background-image:url(courses-python-bg.png);
-  border: 50px solid rgb(209, 255, 209);
-  border-bottom-width: 0px;
-  border-radius: 18px;
-  position: relative;
-  background-color: #ffffc9;
-  width: 700px;
-  height: 350px;
-  background-size: contain;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }
 
-@media (max-width: 700px) {
+.python-course {
+  border-radius: 20px;
+  width: 98%;
+  height: auto;
+  max-width: 600px;
+  flex-shrink: 2;
+}
+
+.python-course-text {
+  color: rgb(41, 41, 41);
+  font-weight: normal;
+  font-size: 30px;
+}
+
+@media (max-width: 750px) {
   .dev-tab-desc {
     font-size: 17px;
     top: 200px;

@@ -5,8 +5,8 @@
     <nav :class="['nav-bar', { 'nav-visible': showMenu }]" v-show="showMenu || windowWidth > 930">
       <router-link to="/courses">Курсы</router-link>
       <router-link to="/tests">Тесты</router-link>
-      <router-link v-if="token" to="/user-panel">Панель пользователя</router-link>
       <router-link to="/help">Поддержка</router-link>
+      <router-link v-if="token" to="/user-panel">Панель пользователя</router-link>
     </nav>
 
     <button class="profile-box display-main" @click="profileButton">

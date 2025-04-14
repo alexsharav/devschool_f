@@ -40,7 +40,7 @@ import { API_SERVER } from '@/constants/API_SERVER.constants';
 import router from '@/router';
 import { setCookie } from '@/utils/cookie';
 import { ref } from 'vue';
-import BackgroundAnimation from '../BackgroundAnimation.vue';
+import BackgroundAnimation from '../bgViews/BackgroundAnimation.vue';
 
 const userData = ref({
     login: "",

@@ -14,7 +14,6 @@
 
 body {
   background-color: #ffffff;
-  background-color: #ffffff;
   background-image: radial-gradient(#2f2f2f36 0.8px, #ffffff 0.8px);
   background-size: 16px 16px;
 }
@@ -22,6 +21,6 @@ body {
 .all-flex {
   display: flex;
   align-items: center;
-  flex-flow: column;
+  flex-flow: column wrap;
 }
 </style>

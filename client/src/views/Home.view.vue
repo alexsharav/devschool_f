@@ -35,8 +35,8 @@ function pushee(pushing) {
     width: 98%;
     height: 750px;
     background-image:
-        repeating-radial-gradient(circle at 0 0, transparent 0, rgb(156, 206, 253) 10px), repeating-linear-gradient(rgb(182, 202, 255), rgb(187, 219, 255));
-    border: 2px solid rgba(108, 98, 255, 0.541);
+        repeating-radial-gradient(circle at 0 0, transparent 0, rgb(189, 240, 255) 10px), repeating-linear-gradient(rgb(196, 255, 252), rgb(196, 255, 252));
+    border: 2px solid rgb(113, 200, 221);
     border-radius: 30px;
 }
 
