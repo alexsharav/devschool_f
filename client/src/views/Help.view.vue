@@ -3,8 +3,7 @@
 
     <section class="tab">
         <h1 class="dev-tab-main-text">прислушиваемся к вам</h1>
-        <p class="dev-tab-desc">дев.школа - образовательный сайт, целью которого является постоянное улучшение внешнего
-            вида сайта, его работы и содержания</p>
+        <p class="dev-tab-desc">нашей целью является постоянное улучшение внешнего вида сайта и его работы</p>
     </section>
 
     <section class="help-panel">
@@ -13,7 +12,7 @@
         </div>
 
         <div class="send-email">
-
+            <h1></h1>
         </div>
     </section>
 </template>
@@ -23,6 +22,7 @@ import Header from "@/components/Header.vue";
 </script>
 
 <style scoped>
+
 .tab {
     position: relative;
     top: 14px;
@@ -63,44 +63,49 @@ import Header from "@/components/Header.vue";
     margin-top: auto;
     border: 1px solid rgba(206, 206, 206, 0.705);
     border-radius: 18px;
-    background: rgb(250, 250, 250);
+    background: rgb(233, 233, 233);
     width: 98%;
     max-width: 1200px;
-    height: 500px;
+    height: auto;
     z-index: 2;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .contact-information {
-    height: 100%;
-    width: 40%;
-    padding: 40px 0px 0px 35px;
+    padding: 30px 2% 0px 2%;
     border-radius: 18px;
     border-right: 1px solid rgba(206, 206, 206, 0.705);
     background: white;
     display: flex;
     flex-flow: wrap;
+    height: 600px;
 }
 
 .co-text {
     font-weight: normal;
     font-size: 27px;
     color: rgb(59, 59, 59);
+    text-align: center;
+}
+
+.send-email {
 }
 
 @media (max-width: 700px) {
     .dev-tab-desc {
         font-size: 17px;
-        top: 200px;
+        top: 180px;
         padding: 10px 5%;
     }
 
     .dev-tab-main-text {
         font-size: 30px;
-        top: 180px;
+        top: 160px;
     }
 
     .tab {
-        height: 400px;
+        height: 360px;
     }
 }
 

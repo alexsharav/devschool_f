@@ -41,6 +41,7 @@ import Header from "@/components/Header.vue";
   top: 220px;
   font-size: 20px;
   color: rgb(90, 90, 90);
+  text-align: center;
 }
 
 @media (max-width: 750px) {

@@ -4,6 +4,7 @@
     <section class="tab">
         <h1 class="dev-tab-main-text">дев.школа</h1>
         <p class="dev-tab-desc">система образовательных курсов и тестов</p>
+
         <div class="button-flex">
             <button class="dev-tab-start" @click="pushee('/courses')">
                 <p class="dev-tab-courses">начни с наших курсов</p>
@@ -26,6 +27,7 @@ function pushee(pushing) {
 </script>
 
 <style scoped>
+
 .tab {
     position: relative;
     top: 14px;
@@ -111,13 +113,6 @@ function pushee(pushing) {
     background: rgb(233, 233, 233);
 }
 
-.dev-tab-devschool {
-    color: rgba(240, 248, 255, 0);
-    -webkit-text-stroke: 0.5px rgb(224, 224, 224);
-    font-size: 100px;
-    font-weight: bolder;
-}
-
 .button-flex {
     display: flex;
     flex-flow: row wrap;
@@ -169,4 +164,5 @@ function pushee(pushing) {
         height: 500px;
     }
 }
+
 </style>
