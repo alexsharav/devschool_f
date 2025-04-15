@@ -15,10 +15,13 @@
             </button>
         </div>
     </section>
+
+    <Footer />
 </template>
 
 <script setup>
 import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
 import router from '@/router';
 
 function pushee(pushing) {
@@ -67,9 +70,9 @@ function pushee(pushing) {
     background: rgb(32, 32, 32);
     padding: 16px 0px;
     align-items: center;
-    transition: gap 0.4s ease;
     cursor: pointer;
     border: none;
+    transition: background-color 0.6s ease;
 }
 
 .dev-tab-courses {
@@ -79,11 +82,10 @@ function pushee(pushing) {
     font-weight: bold;
     border-radius: 18px;
     padding: 0px 15px;
-    transition: background-color 0.5 ease;
 }
 
 .dev-tab-start:hover {
-    background: rgb(51, 51, 51);
+    background: rgb(104, 104, 104);
 }
 
 .dev-tab-start-tests {
@@ -93,11 +95,12 @@ function pushee(pushing) {
     display: flex;
     flex-flow: row wrap;
     padding: 16px 0px;
-    background: rgb(248, 248, 248);
+    background: rgb(255, 255, 255);
     gap: 0px;
     align-items: center;
     cursor: pointer;
     border: none;
+    transition: background-color 0.6s ease;
 }
 
 .dev-tab-tests {
@@ -110,7 +113,7 @@ function pushee(pushing) {
 }
 
 .dev-tab-start-tests:hover {
-    background: rgb(233, 233, 233);
+    background: rgb(201, 201, 201);
 }
 
 .button-flex {

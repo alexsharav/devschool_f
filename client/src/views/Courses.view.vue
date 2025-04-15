@@ -7,7 +7,8 @@
   </section>
 
   <section class="python-tab">
-    <img class="python-course-img" :src="require('@/views/bgImages/courses-python-bg.png')" alt="Logo" @click="goToPythonCourse()">
+    <img class="python-course-img" :src="require('@/views/bgImages/courses-python-bg.png')" alt="Logo"
+      @click="goToPythonCourse()">
 
     <div class="python-course-text-desc">
       <router-link class="python-course-text" to="/python-course">Программирование на языке Python</router-link>
@@ -26,23 +27,25 @@
       <router-link class="data-analysis-course-text" to="/data-analysis-course">Основы анализа данных</router-link>
 
       <p class="data-analysis-course-description">
-        Понятное и доступное введение в работу с данными. 
-        Вы узнаете, как анализировать данные, научитесь находить важную информацию 
+        Понятное и доступное введение в работу с данными.
+        Вы узнаете, как анализировать данные, научитесь находить важную информацию
         в данных, строить наглядные выводы и делать первые шаги в сторону профессиональной аналитики.
-        Этот курс поможет вам начать путь в сфере анализа 
+        Этот курс поможет вам начать путь в сфере анализа
         данных.</p>
 
       <router-link class="data-analysis-course-link" to="/data-analysis-course">Посмотреть курс</router-link>
     </div>
 
-    <img class="data-analysis-course-img" :src="require('@/views/bgImages/courses-data-analysis-bg.png')" alt="Logo" @click="goToDataAnalysisCourse()">
+    <img class="data-analysis-course-img" :src="require('@/views/bgImages/courses-data-analysis-bg.png')" alt="Logo"
+      @click="goToDataAnalysisCourse()">
   </section>
 
-  <section class=""></section>
+  <Footer />
 </template>
 
 <script setup>
 import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
@@ -88,7 +91,8 @@ function goToDataAnalysisCourse() {
   color: rgb(90, 90, 90);
 }
 
-.python-tab, .data-analysis-tab {
+.python-tab,
+.data-analysis-tab {
   padding: 60px 0;
   display: flex;
   justify-content: center;
@@ -99,7 +103,8 @@ function goToDataAnalysisCourse() {
   height: auto;
 }
 
-.python-course-img, .data-analysis-course-img {
+.python-course-img,
+.data-analysis-course-img {
   border-radius: 20px;
   width: 100%;
   height: auto;
@@ -109,11 +114,13 @@ function goToDataAnalysisCourse() {
   cursor: pointer;
 }
 
-.python-course-img:hover, .data-analysis-course-img:hover {
+.python-course-img:hover,
+.data-analysis-course-img:hover {
   border: 1px solid green;
 }
 
-.python-course-text, .data-analysis-course-text {
+.python-course-text,
+.data-analysis-course-text {
   color: rgb(41, 41, 41);
   font-weight: normal;
   font-size: 30px;
@@ -121,24 +128,27 @@ function goToDataAnalysisCourse() {
   text-decoration: underline dotted;
 }
 
-.python-course-description, .data-analysis-course-description {
+.python-course-description,
+.data-analysis-course-description {
   margin: 20px 0px 0px 0px;
   font-size: 20px;
-  color:rgb(73, 73, 73);
+  color: rgb(73, 73, 73);
   text-align: justify;
 }
 
-.python-course-text-desc, .data-analysis-course-text-desc {
+.python-course-text-desc,
+.data-analysis-course-text-desc {
   display: flex;
   flex-flow: column;
   max-width: 600px;
   width: 100%;
 }
 
-.python-course-link, .data-analysis-course-link {
+.python-course-link,
+.data-analysis-course-link {
   margin: 10px 0px 0px 0px;
   font-size: 18px;
-  color:rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
 @media (max-width: 910px) {
@@ -154,33 +164,38 @@ function goToDataAnalysisCourse() {
 @media (max-width: 750px) {
   .dev-tab-desc {
     font-size: 17px;
-    top: 200px;
+    top: 180px;
+    padding: 10px 5%;
   }
 
   .dev-tab-main-text {
     font-size: 30px;
-    top: 180px;
+    top: 160px;
   }
 
   .tab {
-    height: 400px;
+    height: 360px;
   }
 
-  .python-tab, .data-analysis-tab {
+  .python-tab,
+  .data-analysis-tab {
     padding: 30px 20px;
     gap: 15px;
   }
 
-  .python-course-text, .data-analysis-course-text {
+  .python-course-text,
+  .data-analysis-course-text {
     font-size: 24px;
     text-align: center;
   }
 
-  .python-course-description, .data-analysis-course-description {
+  .python-course-description,
+  .data-analysis-course-description {
     font-size: 18px;
   }
 
-  .python-course-link, .data-analysis-course-link {
+  .python-course-link,
+  .data-analysis-course-link {
     font-size: 16px;
     text-align: center;
   }
@@ -195,26 +210,31 @@ function goToDataAnalysisCourse() {
   .dev-tab-main-text {
     font-size: 22px;
     top: 155px;
+    padding: 10px 0px;
   }
 
   .tab {
     height: 350px;
   }
 
-  .python-tab, .data-analysis-tab {
+  .python-tab,
+  .data-analysis-tab {
     padding: 26px 16px;
     gap: 10px;
   }
 
-  .python-course-text, .data-analysis-course-text {
+  .python-course-text,
+  .data-analysis-course-text {
     font-size: 20px;
   }
 
-  .python-course-description, .data-analysis-course-description {
+  .python-course-description,
+  .data-analysis-course-description {
     font-size: 14px;
   }
 
-  .python-course-link, .data-analysis-course-link {
+  .python-course-link,
+  .data-analysis-course-link {
     font-size: 12px;
   }
 }

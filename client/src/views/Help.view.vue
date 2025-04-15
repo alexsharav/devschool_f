@@ -8,21 +8,27 @@
 
     <section class="help-panel">
         <div class="contact-information">
-            <h1 class="co-text">Информация и контакты</h1>
+            <h1 class="contact-information-text">Информация и контакты</h1>
+
+            <div class="co-">
+
+            </div>
         </div>
 
         <div class="send-email">
-            <h1></h1>
+            <h1 class="send-email-text">Напиши нам письмо</h1>
         </div>
     </section>
+
+    <Footer />
 </template>
 
 <script setup>
 import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
 </script>
 
 <style scoped>
-
 .tab {
     position: relative;
     top: 14px;
@@ -63,7 +69,7 @@ import Header from "@/components/Header.vue";
     margin-top: auto;
     border: 1px solid rgba(206, 206, 206, 0.705);
     border-radius: 18px;
-    background: rgb(233, 233, 233);
+    background: rgb(245, 245, 245);
     width: 98%;
     max-width: 1200px;
     height: auto;
@@ -73,23 +79,32 @@ import Header from "@/components/Header.vue";
 }
 
 .contact-information {
-    padding: 30px 2% 0px 2%;
+    padding: 30px 0px 0px 0px;
     border-radius: 18px;
-    border-right: 1px solid rgba(206, 206, 206, 0.705);
     background: white;
     display: flex;
     flex-flow: wrap;
-    height: 600px;
+    justify-content: center;
+    width: 35%;
 }
 
-.co-text {
+.contact-information-text, .send-email-text {
     font-weight: normal;
     font-size: 27px;
     color: rgb(59, 59, 59);
-    text-align: center;
 }
 
 .send-email {
+    padding: 30px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+    width: 65%;
+}
+
+@media (max-width: 910px) {
+    .help-panel {
+        flex-flow: column-reverse;
+    }
 }
 
 @media (max-width: 700px) {
