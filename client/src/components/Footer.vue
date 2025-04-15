@@ -1,12 +1,31 @@
 <template>
-    <footer class="footer-box">
+    <footer :class="['footer-box', { 'fixed-footer': isFixed }]">
         <router-link to="/" class="dev-head-main">© dev.school</router-link>
-
         <h1 class="devschool-footer-text">2025</h1>
     </footer>
 </template>
 
 <script setup>
+import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
+
+const isFixed = ref(false)
+
+const updateFooterPosition = () => {
+    nextTick(() => {
+        const bodyHeight = document.body.scrollHeight
+        const windowHeight = window.innerHeight
+        isFixed.value = bodyHeight <= windowHeight
+    })
+}
+
+onMounted(() => {
+    updateFooterPosition()
+    window.addEventListener('resize', updateFooterPosition)
+})
+
+onBeforeUnmount(() => {
+    window.removeEventListener('resize', updateFooterPosition)
+})
 </script>
 
 <style scoped>
@@ -20,6 +39,12 @@
     max-width: 1200px;
     min-height: 64px;
     padding: 4px 10px;
+    margin: 0 auto;
+}
+
+.fixed-footer {
+    position: absolute;
+    bottom: 0;
 }
 
 .dev-head-main {

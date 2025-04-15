@@ -1,10 +1,12 @@
 <template>
   <div class="all-flex">
-    <router-view />
+    <div class="content-wrapper">
+      <router-view />
+    </div>
   </div>
 </template>
-
 <style>
+
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +22,13 @@ body {
 
 .all-flex {
   display: flex;
-  align-items: center;
   flex-flow: column wrap;
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>
