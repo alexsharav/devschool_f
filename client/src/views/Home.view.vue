@@ -25,12 +25,11 @@ import Footer from "@/components/Footer.vue";
 import router from '@/router';
 
 function pushee(pushing) {
-    router.push({path: pushing});
+    router.push({ path: pushing });
 }
 </script>
 
 <style scoped>
-
 .tab {
     position: relative;
     top: 14px;
@@ -40,8 +39,8 @@ function pushee(pushing) {
     width: 98%;
     height: 750px;
     background-image:
-        repeating-radial-gradient(circle at 0 0, transparent 0, rgb(189, 240, 255) 10px), repeating-linear-gradient(rgb(196, 255, 252), rgb(196, 255, 252));
-    border: 2px solid rgb(113, 200, 221);
+        repeating-radial-gradient(circle at 0 0, transparent 0, rgb(132, 253, 162) 10px), repeating-linear-gradient(rgb(139, 255, 230), rgb(168, 255, 157));
+    border: 1px solid rgb(0, 219, 66);
     border-radius: 30px;
 }
 
@@ -167,5 +166,4 @@ function pushee(pushing) {
         height: 500px;
     }
 }
-
 </style>

@@ -1,7 +1,7 @@
 <template>
     <footer :class="['footer-box', { 'fixed-footer': isFixed }]">
         <router-link to="/" class="dev-head-main">© dev.school</router-link>
-        <h1 class="devschool-footer-text">2025</h1>
+        <h1 class="devschool-footer-text">2025 pre-alpha</h1>
     </footer>
 </template>
 
@@ -12,9 +12,7 @@ const isFixed = ref(false)
 
 const updateFooterPosition = () => {
     nextTick(() => {
-        const bodyHeight = document.body.scrollHeight
-        const windowHeight = window.innerHeight
-        isFixed.value = bodyHeight <= windowHeight
+        isFixed.value = document.body.scrollHeight <= window.innerHeight
     })
 }
 
@@ -38,9 +36,10 @@ onBeforeUnmount(() => {
     width: 99%;
     max-width: 1200px;
     min-height: 64px;
-    padding: 4px 10px;
-    margin: 0 auto;
+    margin-top: 10px;
+    border-top: 1px solid rgb(197, 197, 197);
 }
+
 
 .fixed-footer {
     position: absolute;
@@ -55,7 +54,7 @@ onBeforeUnmount(() => {
 .dev-head-main {
     font-weight: normal;
     font-size: 20px;
-    color: rgb(20, 20, 20);
+    color: rgb(22, 22, 22);
 }
 
 @media (max-width: 930px) {
@@ -84,6 +83,20 @@ onBeforeUnmount(() => {
 
     .nav-visible {
         display: flex !important;
+    }
+}
+
+@media (max-width: 750px) {
+    .devschool-footer-text,
+    .dev-head-main {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 500px) {
+    .devschool-footer-text,
+    .dev-head-main {
+        font-size: 15px;
     }
 }
 </style>

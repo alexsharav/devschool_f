@@ -45,7 +45,7 @@ export default {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, POINT_SIZE, 0, 2 * Math.PI);
-        ctx.fillStyle = '#ffffff';
+        ctx.fillStyle = 'rgb(139, 255, 230)';
         ctx.fill();
 
         for (let j = i + 1; j < points.length; j++) {
@@ -54,7 +54,7 @@ export default {
 
           if (d < MAX_DIST) {
             const alpha = 1 - d / MAX_DIST;
-            ctx.strokeStyle = `rgba(255,255,255,${alpha})`;
+            ctx.strokeStyle = `rgba(108, 255, 157,${alpha})`;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
@@ -103,6 +103,6 @@ export default {
   height: 100vh;
   display: block;
   z-index: -1;
-  background: #000000;
+  background: rgb(25, 25, 25);
 }
 </style>

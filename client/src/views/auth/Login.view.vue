@@ -87,7 +87,6 @@ function pushHome() {
     display: flex;
     justify-content: left;
     align-items: center;
-    background: rgba(139, 139, 139, 0.192);
 }
 
 .login-container {

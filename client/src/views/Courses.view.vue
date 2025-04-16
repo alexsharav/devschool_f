@@ -7,7 +7,7 @@
   </section>
 
   <section class="python-tab">
-    <img class="python-course-img" :src="require('@/views/bgImages/courses-python-bg.png')" alt="Logo"
+    <img class="python-course-img" :src="require('@/views/bgImages/courses-python-bg.png')" alt="python-course-img"
       @click="goToPythonCourse()">
 
     <div class="python-course-text-desc">
@@ -36,8 +36,8 @@
       <router-link class="data-analysis-course-link" to="/data-analysis-course">Посмотреть курс</router-link>
     </div>
 
-    <img class="data-analysis-course-img" :src="require('@/views/bgImages/courses-data-analysis-bg.png')" alt="Logo"
-      @click="goToDataAnalysisCourse()">
+    <img class="data-analysis-course-img" :src="require('@/views/bgImages/courses-data-analysis-bg.png')"
+      alt="data-analysis-course-img" @click="goToDataAnalysisCourse()">
   </section>
 
   <Footer />
@@ -69,8 +69,8 @@ function goToDataAnalysisCourse() {
   width: 98%;
   height: 500px;
   background-image:
-    repeating-radial-gradient(circle at 0 0, transparent 0, rgb(132, 253, 162) 10px), repeating-linear-gradient(rgb(172, 255, 179), rgb(169, 255, 202));
-  border: 2px solid rgb(0, 219, 66);
+    repeating-radial-gradient(circle at 0 0, transparent 0, rgb(132, 253, 162) 10px), repeating-linear-gradient(rgb(139, 255, 230), rgb(168, 255, 157));
+  border: 1px solid rgb(0, 219, 66);
   border-radius: 30px;
 
 }
@@ -99,7 +99,7 @@ function goToDataAnalysisCourse() {
   align-items: center;
   gap: 30px;
   max-width: 1200px;
-  width: 100%;
+  width: 98%;
   height: auto;
 }
 
@@ -110,7 +110,7 @@ function goToDataAnalysisCourse() {
   height: auto;
   max-width: 600px;
   flex-shrink: 2;
-  border: 1px solid rgb(142, 255, 142);
+  border: 1px solid rgb(168, 255, 168);
   cursor: pointer;
 }
 
@@ -163,19 +163,19 @@ function goToDataAnalysisCourse() {
 
 @media (max-width: 750px) {
   .dev-tab-desc {
-    font-size: 17px;
-    top: 180px;
-    padding: 10px 5%;
-  }
+        font-size: 17px;
+        top: 170px;
+        padding: 10px 5%;
+    }
 
-  .dev-tab-main-text {
-    font-size: 30px;
-    top: 160px;
-  }
+    .dev-tab-main-text {
+        font-size: 30px;
+        top: 160px;
+    }
 
-  .tab {
-    height: 360px;
-  }
+    .tab {
+        height: 360px;
+    }
 
   .python-tab,
   .data-analysis-tab {
@@ -204,17 +204,17 @@ function goToDataAnalysisCourse() {
 @media (max-width: 400px) {
   .dev-tab-desc {
     font-size: 14px;
-    top: 170px;
+    top: 120px;
   }
 
   .dev-tab-main-text {
     font-size: 22px;
-    top: 155px;
+    top: 120px;
     padding: 10px 0px;
   }
 
   .tab {
-    height: 350px;
+    height: 280px;
   }
 
   .python-tab,

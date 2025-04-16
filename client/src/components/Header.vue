@@ -77,7 +77,7 @@ onBeforeUnmount(() => {
   min-height: 64px;
   padding: 4px 4px;
   background: rgb(255, 255, 255);
-  border: 3px solid rgba(49, 49, 49, 0.116);
+  border: 1px solid rgb(221, 221, 221);
   border-radius: 16px;
 }
 
