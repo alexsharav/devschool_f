@@ -85,7 +85,7 @@ onBeforeUnmount(() => {
   font-size: 23px;
   font-weight: bolder;
   padding: 0px 0px 0px 30px;
-  color: rgb(66, 66, 66);
+  color: rgb(8, 8, 8);
   text-decoration: none;
 }
 

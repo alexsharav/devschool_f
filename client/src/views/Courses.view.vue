@@ -125,7 +125,12 @@ function goToDataAnalysisCourse() {
   font-weight: normal;
   font-size: 30px;
   text-align: justify;
-  text-decoration: underline dotted;
+  text-decoration: none;
+}
+
+.python-course-text:hover,
+.data-analysis-course-text:hover {
+  text-decoration: underline;
 }
 
 .python-course-description,
@@ -149,6 +154,11 @@ function goToDataAnalysisCourse() {
   margin: 10px 0px 0px 0px;
   font-size: 18px;
   color: rgb(0, 0, 0);
+}
+
+.python-course-link:hover,
+.data-analysis-course-link:hover {
+  color: rgb(93, 93, 93);
 }
 
 @media (max-width: 910px) {

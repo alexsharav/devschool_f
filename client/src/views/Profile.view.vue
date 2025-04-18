@@ -35,7 +35,6 @@
 import { ref } from "vue";
 import { getCookie } from "@/utils/cookie";
 import { API_SERVER } from "@/constants/API_SERVER.constants";
-import Header from "@/components/Header.vue";
 
 const token = getCookie("tkn");
 const userData = ref({

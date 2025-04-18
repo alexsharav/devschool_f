@@ -1,34 +1,41 @@
 <template>
-  <Header />
+  <div v-if="!token">
+    Вам не дозволено смотреть эту страницу
+  </div>
+  
+  <div v-if="token">
+    <Header />
 
-  <section class="tab">
-    <h1 class="dev-tab-main-text">дев.школа</h1>
-    <p class="dev-tab-desc">система образовательных курсов и тестов</p>
+    <section class="tab">
+      <h1 class="dev-tab-main-text">дев.школа</h1>
+      <p class="dev-tab-desc">система образовательных курсов и тестов</p>
 
-    <button class="dev-tab-start" @click="coursesLink">
-      <p class="dev-tab-courses dev-tab-courses-text">айти с нами с нуля</p>
-      <p class="dev-tab-courses dev-tab-courses-line">→</p>
-    </button>
-  </section>
+      <button class="dev-tab-start" @click="coursesLink">
+        <p class="dev-tab-courses dev-tab-courses-text">айти с нами с нуля</p>
+        <p class="dev-tab-courses dev-tab-courses-line">→</p>
+      </button>
+    </section>
 
-  <section class="description">
-    <div class="first-desc">
+    <section class="description">
+      <div class="first-desc">
 
-    </div>
+      </div>
 
-    <div class="second-desc">
+      <div class="second-desc">
 
-    </div>
+      </div>
+      <div class="third-desc">
 
-    <div class="third-desc">
-
-    </div>
-  </section>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script setup>
 import Header from "@/components/Header.vue";
+import { getCookie } from "@/utils/cookie";
 
+const token = getCookie("tkn");
 function coursesLink() {
   window.location = "/courses";
 }

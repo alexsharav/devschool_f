@@ -37,7 +37,6 @@ onBeforeUnmount(() => {
     max-width: 1200px;
     min-height: 64px;
     margin-top: 10px;
-    border-top: 1px solid rgb(197, 197, 197);
 }
 
 

@@ -3,7 +3,7 @@
 
     <section class="tab">
         <h1 class="dev-tab-main-text">прислушиваемся к вам</h1>
-        <p class="dev-tab-desc">нашей целью является постоянное улучшение внешнего вида сайта и его работы</p>
+        <p class="dev-tab-desc">нашей целью является постоянное улучшение вида сайта и его работы</p>
     </section>
 
     <section class="help-panel">
