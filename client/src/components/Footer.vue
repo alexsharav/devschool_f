@@ -33,7 +33,7 @@ onBeforeUnmount(() => {
     justify-content: space-between;
     align-items: center;
     z-index: 1;
-    width: 99%;
+    width: 90%;
     max-width: 1200px;
     min-height: 64px;
     margin-top: 10px;

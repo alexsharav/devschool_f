@@ -50,7 +50,23 @@
 
         <div class="send-email">
             <h1 class="send-email-text">Напиши нам письмо</h1>
+
+
+            <form class="email-form">
+
+                <div class="name-fields">
+                    <input type="text" placeholder="Имя">
+                    <input type="text" placeholder="Фамилия">
+                </div>
+
+                <input type="email" placeholder="Email*" required>
+
+                <textarea placeholder="Сообщение" rows="6"></textarea>
+
+                <button type="submit" class="submit-button">Отправить</button>
+            </form>
         </div>
+
     </section>
 
     <Footer />
@@ -105,7 +121,7 @@ import Footer from "@/components/Footer.vue";
     height: auto;
     display: flex;
     flex-flow: row wrap;
-    margin: auto;
+    margin-top: 30px;
 }
 
 .contact-information {
@@ -129,7 +145,8 @@ import Footer from "@/components/Footer.vue";
 .send-email {
     padding: 30px 0px 0px 0px;
     display: flex;
-    justify-content: center;
+    flex-flow: column wrap;
+    align-items: center;
     width: 65%;
 }
 
@@ -139,7 +156,6 @@ import Footer from "@/components/Footer.vue";
     gap: 10px;
     padding: 20px 0px 0px 0px;
     width: 90%;
-    max-width: 350px;
 }
 
 .info-item img {
@@ -172,12 +188,60 @@ import Footer from "@/components/Footer.vue";
     margin: 0px 0px 30px 0px;
 }
 
+.email-form {
+    width: 95%;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 15px;
+    margin: 20px 0px;
+}
 
-.map-image,
-.phone-image,
-.education-image {
-    width: 30px;
-    height: 30px;
+.email-form label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.required {
+    color: red;
+    margin-left: 3px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+}
+
+.name-fields {
+    display: flex;
+    gap: 10px;
+}
+
+.name-fields input {
+    flex: 1;
+}
+
+.email-form input,
+.email-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.submit-button {
+    background-color: #111;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #525252;
 }
 
 @media (max-width: 600px) {
