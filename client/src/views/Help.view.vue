@@ -191,7 +191,7 @@ import Footer from "@/components/Footer.vue";
 .email-form {
     width: 95%;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
     gap: 15px;
     margin: 20px 0px;
 }
@@ -202,19 +202,9 @@ import Footer from "@/components/Footer.vue";
     color: #333;
 }
 
-.required {
-    color: red;
-    margin-left: 3px;
-}
-
-.radio-group {
-    display: flex;
-    gap: 15px;
-    font-size: 14px;
-}
-
 .name-fields {
     display: flex;
+    flex-flow: wrap;
     gap: 10px;
 }
 
@@ -244,7 +234,7 @@ import Footer from "@/components/Footer.vue";
     background-color: #525252;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 630px) {
     .help-panel {
         flex-flow: column-reverse;
     }

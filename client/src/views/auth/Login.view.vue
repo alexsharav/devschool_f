@@ -11,11 +11,11 @@
                 <h1 class="caption-form">Авторизация</h1>
 
                 <div class="item-form">
-                    <input type="email" id="login" class="input-form" v-model="userData.login" placeholder="Почта" />
+                    <input type="email" id="login" class="input-form" v-model="userData.login" placeholder="Почта" required/>
                 </div>
 
                 <div class="item-form">
-                    <input type="password" id="password" class="input-form" v-model="userData.password" placeholder="Пароль" />
+                    <input type="password" id="password" class="input-form" v-model="userData.password" placeholder="Пароль" required/>
                 </div>
 
                 <div class="buttons-form">

@@ -11,28 +11,28 @@
                 <div class="caption-form">Регистрация</div>
 
                 <div class="item-form">
-                    <input type="text" class="input-form" v-model="userData.surname" placeholder="Введите фамилию" />
+                    <input type="text" class="input-form" v-model="userData.surname" placeholder="Введите фамилию" required/>
                 </div>
 
                 <div class="item-form">
-                    <input type="text" class="input-form" v-model="userData.name" placeholder="Введите имя" />
+                    <input type="text" class="input-form" v-model="userData.name" placeholder="Введите имя" required/>
                 </div>
 
                 <div class="item-form">
                     <input type="text" class="input-form" v-model="userData.patronimyc"
-                        placeholder="Введите отчество" />
+                        placeholder="Введите отчество" required/>
                 </div>
 
                 <div class="item-form">
-                    <input type="tel" class="input-form" v-model="userData.number_phone" placeholder="Введите номер" />
+                    <input type="tel" class="input-form" v-model="userData.number_phone" placeholder="Введите номер" required/>
                 </div>
 
                 <div class="item-form">
-                    <input type="email" class="input-form" v-model="userData.email" placeholder="Введите почту">
+                    <input type="email" class="input-form" v-model="userData.email" placeholder="Введите почту" required/>
                 </div>
 
                 <div class="item-form">
-                    <input type="text" class="input-form" v-model="userData.password" placeholder="Введите пароль">
+                    <input type="password" class="input-form" v-model="userData.password" placeholder="Введите пароль" required/>
                 </div>
 
                 <div class="buttons-form">
