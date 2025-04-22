@@ -13,7 +13,7 @@
       </button>
     </nav>
 
-    <button class="profile-box display-main" @click="profileButton">
+    <button class="profile-box" @click="profileButton">
       <p class="profile-link">Профиль</p>
     </button>
 
@@ -119,6 +119,7 @@ onBeforeUnmount(() => {
 
 .profile-box-mobile {
   border: none;
+  display: none;
 }
 
 .profile-link {
@@ -153,11 +154,15 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 930px) {
-  .display-main {
+  .profile-box {
     display: none;
   }
 
   .display-button {
+    display: block;
+  }
+
+  .profile-box-mobile {
     display: block;
   }
 
