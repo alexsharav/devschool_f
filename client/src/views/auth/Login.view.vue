@@ -112,8 +112,8 @@ function pushHome() {
     position: relative;
     display: block;
     margin-left: auto;
-    top: 10px;
-    right: 20px;
+    margin-top: 10px;
+    margin-right: 10px;
     background: none;
 }
 

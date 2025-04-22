@@ -128,7 +128,7 @@ onBeforeUnmount(() => {
   border: none;
   padding: 15px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: bold;
   border-radius: 10px;
   cursor: pointer;
   text-decoration: none;
@@ -145,7 +145,6 @@ onBeforeUnmount(() => {
   display: none;
   padding: 0px 25px;
   cursor: pointer;
-  font-size: 30px;
 }
 
 .three-lines-image {
@@ -174,6 +173,7 @@ onBeforeUnmount(() => {
     display: none;
     flex-direction: column;
     width: calc(100% + 2px);
+    margin-top: -10px;
     background-color: white;
     padding: 10px 10px;
     margin-left: -1px;
@@ -198,12 +198,19 @@ onBeforeUnmount(() => {
 
   .header-box {
     min-height: 55px;
-    top: 15px;
   }
 
   .three-lines-image {
     width: 20px;
     height: 20px;
+  }
+
+  .nav-bar a {
+    font-size: 13px;
+  }
+
+  .profile-link {
+    font-size: 12px;
   }
 }
 </style>

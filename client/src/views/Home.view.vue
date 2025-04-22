@@ -5,12 +5,12 @@
         <h1 class="dev-tab-main-text">дев.школа</h1>
         <p class="dev-tab-desc">система образовательных курсов и тестов</p>
 
-        <div class="button-flex">
-            <button class="dev-tab-start" @click="pushee('/courses')">
+        <div class="buttons">
+            <button class="dev-tab-start-courses" @click="router.push({ path: '/courses' })">
                 <p class="dev-tab-courses">начни с наших курсов</p>
             </button>
 
-            <button class="dev-tab-start-tests" @click="pushee('/tests')">
+            <button class="dev-tab-start-tests" @click="router.push({ path: '/tests' })">
                 <p class="dev-tab-tests">начни с наших тестов</p>
             </button>
         </div>
@@ -23,16 +23,12 @@
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import router from '@/router';
-
-function pushee(pushing) {
-    router.push({ path: pushing });
-}
 </script>
 
 <style scoped>
 .tab {
     position: relative;
-    top: 14px;
+    margin-top: 14px;
     align-items: center;
     display: flex;
     flex-flow: column wrap;
@@ -46,7 +42,7 @@ function pushee(pushing) {
 
 .dev-tab-main-text {
     position: relative;
-    top: 240px;
+    margin-top: 240px;
     font-size: 50px;
     font-weight: bold;
     color: rgb(41, 41, 41);
@@ -55,115 +51,97 @@ function pushee(pushing) {
 .dev-tab-desc {
     position: relative;
     padding: 10px 0px;
-    top: 260px;
+    margin-top: 10px;
     font-size: 20px;
     color: rgb(90, 90, 90);
 }
 
-.dev-tab-start {
+.buttons {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.buttons button {
     position: relative;
-    top: 320px;
     border-radius: 12px;
     display: flex;
     flex-flow: row wrap;
-    background: rgb(32, 32, 32);
     padding: 16px 0px;
     align-items: center;
     cursor: pointer;
     border: none;
     transition: background-color 0.6s ease;
+}
+
+.buttons button p {
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 18px;
+    padding: 0px 15px;
+}
+
+.dev-tab-start-courses {
+    background: rgb(32, 32, 32);
 }
 
 .dev-tab-courses {
     color: white;
-    font-size: 16px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 18px;
-    padding: 0px 15px;
 }
 
-.dev-tab-start:hover {
+.dev-tab-start-courses:hover {
     background: rgb(104, 104, 104);
 }
 
 .dev-tab-start-tests {
-    position: relative;
-    top: 320px;
-    border-radius: 12px;
-    display: flex;
-    flex-flow: row wrap;
-    padding: 16px 0px;
     background: rgb(255, 255, 255);
-    gap: 0px;
-    align-items: center;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.6s ease;
 }
 
 .dev-tab-tests {
     color: rgb(0, 0, 0);
-    font-size: 16px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 18px;
-    padding: 0px 15px;
 }
 
 .dev-tab-start-tests:hover {
     background: rgb(201, 201, 201);
 }
 
-.button-flex {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 20px;
-}
-
 @media (max-width: 700px) {
     .dev-tab-desc {
         font-size: 17px;
-        top: 240px;
     }
 
     .dev-tab-main-text {
         font-size: 40px;
-        top: 220px;
-    }
-
-    .dev-tab-start,
-    .dev-tab-start-tests {
-        top: 280px;
+        margin-top: 220px;
     }
 
     .tab {
         height: 600px;
     }
-
-    .button-flex {
-        flex-flow: column wrap;
-    }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 440px) {
     .dev-tab-desc {
         font-size: 14px;
-        top: 200px;
     }
 
     .dev-tab-main-text {
-        font-size: 36px;
-        top: 180px;
-    }
-
-    .dev-tab-start,
-    .dev-tab-start-tests {
-        top: 240px;
+        font-size: 32px;
+        margin-top: 120px;
     }
 
     .tab {
-        height: 500px;
+        height: 400px;
+    }
+
+    .buttons {
+        flex-flow: column wrap;
+    }
+    
+    .buttons button p {
+        font-size: 12px;
     }
 }
 </style>

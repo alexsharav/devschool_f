@@ -56,35 +56,6 @@ onBeforeUnmount(() => {
     color: rgb(22, 22, 22);
 }
 
-@media (max-width: 930px) {
-    .display-main {
-        display: none;
-    }
-
-    .display-button {
-        display: block;
-    }
-
-    .nav-bar {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: white;
-        border-top: 1px solid #ccc;
-        margin-top: 10px;
-        padding: 10px 0;
-        gap: 10px;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 10;
-    }
-
-    .nav-visible {
-        display: flex !important;
-    }
-}
-
 @media (max-width: 750px) {
     .devschool-footer-text,
     .dev-head-main {

@@ -17,7 +17,7 @@ import Footer from "@/components/Footer.vue";
 <style scoped>
 .tab {
   position: relative;
-  top: 14px;
+  margin-top: 14px;
   align-items: center;
   display: flex;
   flex-flow: column wrap;
@@ -32,7 +32,7 @@ import Footer from "@/components/Footer.vue";
 
 .dev-tab-main-text {
   position: relative;
-  top: 200px;
+  margin-top: 200px;
   font-size: 50px;
   font-weight: bold;
   color: rgb(41, 41, 41);
@@ -41,7 +41,7 @@ import Footer from "@/components/Footer.vue";
 .dev-tab-desc {
   position: relative;
   padding: 10px 0px;
-  top: 220px;
+  margin-top: 20px;
   font-size: 20px;
   color: rgb(90, 90, 90);
   text-align: center;
@@ -50,13 +50,13 @@ import Footer from "@/components/Footer.vue";
 @media (max-width: 750px) {
   .dev-tab-desc {
     font-size: 17px;
-    top: 170px;
+    margin-top: 10px;
     padding: 10px 5%;
   }
 
   .dev-tab-main-text {
     font-size: 30px;
-    top: 160px;
+    margin-top: 160px;
   }
 
   .tab {
@@ -67,12 +67,11 @@ import Footer from "@/components/Footer.vue";
 @media (max-width: 400px) {
   .dev-tab-desc {
     font-size: 14px;
-    top: 120px;
   }
 
   .dev-tab-main-text {
     font-size: 22px;
-    top: 120px;
+    margin-top: 120px;
     padding: 10px 0px;
   }
 
