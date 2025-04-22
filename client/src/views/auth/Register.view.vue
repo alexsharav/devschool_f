@@ -5,7 +5,7 @@
         <div class="register-container">
             <form name="login">
                 <button class="remover-button" @click="pushHome()">
-                    ✖
+                    <img class="x-image" :src="require('@/views/bgImages/x.png')">
                 </button>
 
                 <div class="caption-form">Регистрация</div>
@@ -127,15 +127,18 @@ function pushHome() {
 
 .remover-button {
     border: none;
-    background: none;
     cursor: pointer;
-    font-size: 20px;
     position: relative;
     display: block;
     margin-left: auto;
     top: 10px;
     right: 20px;
-    color: rgb(63, 63, 63);
+    background: none;
+}
+
+.x-image {
+    width: 15px;
+    height: 15px;
 }
 
 .item-form {

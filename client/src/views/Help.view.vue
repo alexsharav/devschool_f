@@ -61,7 +61,7 @@
 
                 <input type="email" placeholder="Email*" required>
 
-                <textarea placeholder="Сообщение" rows="6"></textarea>
+                <textarea class="resize-textarea" placeholder="Сообщение" rows="6"></textarea>
 
                 <button type="submit" class="submit-button">Отправить</button>
             </form>
@@ -121,7 +121,7 @@ import Footer from "@/components/Footer.vue";
     height: auto;
     display: flex;
     flex-flow: row wrap;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .contact-information {
@@ -218,6 +218,10 @@ import Footer from "@/components/Footer.vue";
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
+}
+
+.resize-textarea {
+    resize: none;
 }
 
 .submit-button {

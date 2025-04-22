@@ -1,12 +1,16 @@
 <template>
-  <header class="header-box">
+  <header :class="['header-box', { 'header-fixer': showMenu }]">
     <router-link to="/" class="dev-head-main">дев.школа</router-link>
 
-    <nav :class="['nav-bar', { 'nav-visible': showMenu }]" v-show="showMenu || windowWidth > 930">
+    <nav :class="['nav-bar', { 'nav-visible': showMenu }]">
       <router-link to="/courses">Курсы</router-link>
       <router-link to="/tests">Тесты</router-link>
       <router-link to="/help">Поддержка</router-link>
       <router-link v-if="token" to="/user-panel">Панель пользователя</router-link>
+
+      <button class="profile-box-mobile" @click="profileButton">
+        <p class="profile-link">Профиль</p>
+      </button>
     </nav>
 
     <button class="profile-box display-main" @click="profileButton">
@@ -14,7 +18,7 @@
     </button>
 
     <button class="display-button" @click="toggleMenu">
-      ═
+      <img class="three-lines-image" :src="require('@/views/bgImages/three_lines.png')">
     </button>
   </header>
 </template>
@@ -23,31 +27,25 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { getCookie } from "@/utils/cookie";
 import router from "@/router";
-
-// Получение токена
 const token = getCookie("tkn");
 
-// Переход по кнопке "Профиль"
-function profileButton() {
-  if (token) {
-    router.push('/profile');
-  } else {
-    router.push('/login');
-  }
-}
-
-// Управление бургер-меню
 const showMenu = ref(false);
-const windowWidth = ref(window.innerWidth);
 
 function toggleMenu() {
   showMenu.value = !showMenu.value;
 }
 
 function handleResize() {
-  windowWidth.value = window.innerWidth;
   if (window.innerWidth > 930) {
     showMenu.value = false;
+  }
+}
+
+function profileButton() {
+  if (token) {
+    router.push('/profile');
+  } else {
+    router.push('/login');
   }
 }
 
@@ -119,6 +117,10 @@ onBeforeUnmount(() => {
   border: none;
 }
 
+.profile-box-mobile {
+  border: none;
+}
+
 .profile-link {
   background: rgb(32, 32, 32);
   color: white;
@@ -129,6 +131,7 @@ onBeforeUnmount(() => {
   border-radius: 10px;
   cursor: pointer;
   text-decoration: none;
+  transition: background 0.4s ease;
 }
 
 .profile-link:hover {
@@ -144,8 +147,9 @@ onBeforeUnmount(() => {
   font-size: 30px;
 }
 
-.display-login {
-  display: block;
+.three-lines-image {
+  width: 25px;
+  height: 25px;
 }
 
 @media (max-width: 930px) {
@@ -157,23 +161,44 @@ onBeforeUnmount(() => {
     display: block;
   }
 
+  .header-fixer {
+    border-radius: 16px 16px 0px 0px;
+  }
+
   .nav-bar {
     display: none;
     flex-direction: column;
-    width: 100%;
+    width: calc(100% + 2px);
     background-color: white;
-    border-top: 1px solid #ccc;
-    margin-top: 10px;
-    padding: 10px 0;
+    padding: 10px 10px;
+    margin-left: -1px;
     gap: 10px;
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 10;
+    border: 1px solid rgb(221, 221, 221);
+    border-top: none;
+    border-radius: 0px 0px 16px 16px;
   }
 
   .nav-visible {
-    display: flex !important;
+    display: flex;
+  }
+}
+
+@media (max-width: 450px) {
+  .dev-head-main {
+    font-size: 20px;
+  }
+
+  .header-box {
+    min-height: 55px;
+    top: 15px;
+  }
+
+  .three-lines-image {
+    width: 20px;
+    height: 20px;
   }
 }
 </style>
