@@ -1,9 +1,9 @@
 <template>
-  <div v-if="!token">
+  <!-- <div v-if="!token">
     Вам не дозволено смотреть эту страницу
-  </div>
+  </div> -->
   
-  <div v-if="token">
+  <div v-if="!token">
     <Header />
 
     <section class="tab">

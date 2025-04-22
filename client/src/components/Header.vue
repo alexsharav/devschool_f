@@ -18,7 +18,8 @@
     </button>
 
     <button class="display-button" @click="toggleMenu">
-      <img class="three-lines-image" :src="require('@/views/bgImages/three_lines.png')">
+      <img v-if="showMenu" class="x-image" :src="require('@/views/bgImages/x.png')">
+      <img v-else class="three-lines-image" :src="require('@/views/bgImages/three_lines.png')">
     </button>
   </header>
 </template>
@@ -88,7 +89,6 @@ onBeforeUnmount(() => {
 }
 
 .nav-bar {
-  position: relative;
   display: flex;
   flex-flow: wrap;
   gap: 20px;
@@ -148,8 +148,13 @@ onBeforeUnmount(() => {
 }
 
 .three-lines-image {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
+}
+
+.x-image {
+  width: 17px;
+  height: 17px;
 }
 
 @media (max-width: 930px) {
@@ -201,8 +206,13 @@ onBeforeUnmount(() => {
   }
 
   .three-lines-image {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .x-image {
+    width: 15px;
+    height: 15px;
   }
 
   .nav-bar a {

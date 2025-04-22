@@ -128,7 +128,6 @@ function pushHome() {
 .remover-button {
     border: none;
     cursor: pointer;
-    position: relative;
     display: block;
     margin-left: auto;
     margin-top: 10px;
