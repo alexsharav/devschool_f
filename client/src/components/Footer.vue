@@ -1,14 +1,14 @@
 <template>
     <footer :class="['footer-box', { 'fixed-footer': isFixed }]">
         <router-link to="/" class="dev-head-main">© dev.school</router-link>
-        <h1 class="devschool-footer-text">2025 pre-alpha</h1>
+        <h1 class="devschool-footer-text">{{curDate.toDateString()}}</h1>
     </footer>
 </template>
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
-
 const isFixed = ref(false)
+const curDate = new Date();
 
 const updateFooterPosition = () => {
     nextTick(() => {

@@ -53,7 +53,7 @@ import { API_SERVER } from '@/constants/API_SERVER.constants';
 import router from '@/router';
 import { setCookie } from '@/utils/cookie';
 import { ref } from 'vue';
-import BackgroundAnimation from '../bgViews/BackgroundAnimation.vue';
+import BackgroundAnimation from '../../components/BackgroundAnimation.vue';
 
 const userData = ref({
     surname: "",
@@ -101,7 +101,7 @@ function pushHome() {
     height: 100vh;
     width: 100vw;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
 }
 
@@ -112,9 +112,9 @@ function pushHome() {
     flex-flow: column;
     width: 100vw;
     max-width: 500px;
-    height: 100vh;
-    box-shadow: 2px 10px 30px 10px rgba(255, 255, 255, 0.212);
+    min-height: 800px;
     overflow: auto;
+    border-radius: 18px;
 }
 
 .caption-form {
@@ -130,8 +130,8 @@ function pushHome() {
     cursor: pointer;
     display: block;
     margin-left: auto;
-    margin-top: 10px;
-    margin-right: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
     background: none;
 }
 

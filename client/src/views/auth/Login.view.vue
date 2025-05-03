@@ -3,19 +3,21 @@
 
     <section class="container-page">
         <div class="login-container">
-            <form name="login-form">
-                <button class="remover-button" @click="pushHome()">
-                    <img class="x-image" :src="require('@/views/bgImages/x.png')">
-                </button>
+            <button class="remover-button" @click="pushHome()">
+                <img class="x-image" :src="require('@/views/bgImages/x.png')">
+            </button>
 
+            <form name="login-form">
                 <h1 class="caption-form">Авторизация</h1>
 
                 <div class="item-form">
-                    <input type="email" id="login" class="input-form" v-model="userData.login" placeholder="Почта" required/>
+                    <input type="email" id="login" class="input-form" v-model="userData.login" placeholder="Почта"
+                        required />
                 </div>
 
                 <div class="item-form">
-                    <input type="password" id="password" class="input-form" v-model="userData.password" placeholder="Пароль" required/>
+                    <input type="password" id="password" class="input-form" v-model="userData.password"
+                        placeholder="Пароль" required />
                 </div>
 
                 <div class="buttons-form">
@@ -40,7 +42,7 @@ import { API_SERVER } from '@/constants/API_SERVER.constants';
 import router from '@/router';
 import { setCookie } from '@/utils/cookie';
 import { ref } from 'vue';
-import BackgroundAnimation from '../bgViews/BackgroundAnimation.vue';
+import BackgroundAnimation from '../../components/BackgroundAnimation.vue';
 
 const userData = ref({
     login: "",
@@ -74,31 +76,30 @@ function login(event) {
 }
 
 function pushHome() {
-    router.push({path: '/'});
+    router.push({ path: '/' });
 }
 </script>
 
 <style scoped>
-
 .container-page {
     z-index: 2;
     height: 100vh;
     width: 100vw;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
 }
 
 .login-container {
     background: rgb(255, 255, 255);
     border: 2px solid rgba(199, 198, 198, 0.336);
-    height: 100vh;
     width: 100vw;
-    max-width: 500px;
+    max-width: 400px;
     display: flex;
-    flex-flow: column;
-    box-shadow: 2px 10px 30px 10px rgba(255, 255, 255, 0.212);
+    flex-flow: column wrap;
+    border-radius: 18px;
     overflow: auto;
+    min-height: 470px;
 }
 
 .login-form {
@@ -111,8 +112,8 @@ function pushHome() {
     cursor: pointer;
     display: block;
     margin-left: auto;
-    margin-top: 10px;
-    margin-right: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
     background: none;
 }
 
@@ -122,7 +123,7 @@ function pushHome() {
 }
 
 .caption-form {
-    padding: 20vh 0px 0px 0px;
+    margin-top: 20px;
     justify-self: center;
     font-weight: bolder;
     font-size: 29px;
@@ -177,6 +178,7 @@ function pushHome() {
     text-decoration: none;
     background: none;
     border: none;
+    margin-bottom: 20px;
 }
 
 .no-acc {
@@ -186,5 +188,4 @@ function pushHome() {
 .reg-question {
     text-decoration-line: underline;
 }
-
 </style>

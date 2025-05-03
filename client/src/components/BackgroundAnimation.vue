@@ -12,8 +12,8 @@ export default {
   setup() {
     const bgCanvas = ref(null);             // Ссылка на canvas-элемент
     let animationId = null;                // ID анимации (requestAnimationFrame), чтобы останавливать при размонтировании
-    const POINT_COUNT = 100;             // Количество точек
-    const MAX_DIST = 150;               // Макс. дистанция для соединения линией
+    const POINT_COUNT = 25;             // Количество точек
+    const MAX_DIST = 400;               // Макс. дистанция для соединения линией
     const POINT_SIZE = 4;              // Радиус нарисованных точек
     const points = [];                // Массив для хранения всех точек
 
