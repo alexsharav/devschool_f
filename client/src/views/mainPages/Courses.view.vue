@@ -10,10 +10,10 @@
 </template>
 
 <script setup>
-import Header from "@/components/Header.vue";
-import Footer from "@/components/Footer.vue";
-import StarterTab from "@/components/StarterTab.vue";
-import CourseInfo from "@/components/CourseInfo.vue";
+import Header from "@/components/mainComponents/Header.vue";
+import Footer from "@/components/mainComponents/Footer.vue";
+import StarterTab from "@/components/mainComponents/StarterTab.vue";
+import CourseInfo from "@/components/coursesComponents/CourseInfo.vue";
 import pythonBg from "@/views/bgImages/courses-python-bg.png";
 import dataAnalysisBg from "@/views/bgImages/courses-data-analysis-bg.png";
 

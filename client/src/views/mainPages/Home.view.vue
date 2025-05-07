@@ -19,9 +19,9 @@
 </template>
 
 <script setup>
-import Header from "@/components/Header.vue";
-import Footer from "@/components/Footer.vue";
-import StarterTab from "@/components/StarterTab.vue";
+import Header from "@/components/mainComponents/Header.vue";
+import Footer from "@/components/mainComponents/Footer.vue";
+import StarterTab from "@/components/mainComponents/StarterTab.vue";
 import { useRouter } from 'vue-router';
 
 const router = useRouter();

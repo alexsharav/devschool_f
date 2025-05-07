@@ -103,7 +103,7 @@
 </template>
 
 <script setup>
-import Header from "@/components/Header.vue";
+import Header from "@/components/mainComponents/Header.vue";
 import { API_SERVER } from "@/constants/API_SERVER.constants";
 import { getCookie } from "@/utils/cookie";
 import { ref, watchEffect } from "vue";

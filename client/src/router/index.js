@@ -1,13 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/Home.view.vue'
+import HomeView from '../views/mainPages/Home.view.vue'
 import RegisterView from '@/views/auth/Register.view.vue';
-import ProfileView from '@/views/Profile.view.vue';
-// import TestView from '@/views/Test.view.vue';
+import ProfileView from '@/views/userPages/Profile.view.vue';
 import LoginView from '@/views/auth/Login.view.vue';
-import CoursesView from '@/views/Courses.view.vue';
-import HelpView from '@/views/Help.view.vue';
-import TestsView from '@/views/Tests.view.vue';
-import UserPanelView from '@/views/UserPanel.view.vue';
+import CoursesView from '@/views/mainPages/Courses.view.vue';
+import HelpView from '@/views/mainPages/Help.view.vue';
+import TestsView from '@/views/mainPages/Tests.view.vue';
+import UserPanelView from '@/views/userPages/UserPanel.view.vue';
 
 
 const routes = [
@@ -43,14 +42,6 @@ const routes = [
     },
     component: ProfileView,
   },
-  // {
-  //   path: '/test-train',
-  //   name: 'test-train',
-  //   meta: {
-  //     title: 'тестирования',
-  //   },
-  //   component: TestView,
-  // },
   {
     path: '/courses',
     name: 'courses',
