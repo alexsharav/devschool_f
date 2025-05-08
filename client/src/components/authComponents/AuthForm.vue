@@ -1,4 +1,4 @@
-<template>
+<template>  <!-- Здесь можно(нужно) добавить отдельные слоты для регистрации -->
     <section class="container-page">
         <div class="auth-container">
             <button class="remover-button" @click="() => {router.push({ path: '/' })}">
@@ -39,7 +39,7 @@
 import router from '@/router';
 import { ref } from 'vue';
 
-const props = defineProps({
+const props = defineProps({  // хотел бы избавиться от прямого использования таких конструкций
     captionForm: String,
     buttonForm: String,
     linkQuestion1: String,
@@ -48,13 +48,13 @@ const props = defineProps({
     authFunc: Function
 });
 
-const userData = ref({
+const userData = ref({   // опять же можно добавить маунт-проверку на подлинность
     email: "",
     password: "",
 });
 </script>
 
-<style scoped>
+<style scoped> /* очень много бесполезных стилизаций, можно сделать проще */
 .container-page {
     z-index: 2;
     min-height: 100vh;

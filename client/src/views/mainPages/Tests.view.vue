@@ -1,4 +1,4 @@
-<template>
+<template> <!--доделать всё-->
   <Header />
   
   <StarterTab mainText="вытачи свои навыки" secondaryText="тесты для всех уровней знаний программирования" />
@@ -11,6 +11,3 @@ import Header from "@/components/mainComponents/Header.vue";
 import Footer from "@/components/mainComponents/Footer.vue";
 import StarterTab from "@/components/mainComponents/StarterTab.vue";
 </script>
-
-<style scoped>
-</style>

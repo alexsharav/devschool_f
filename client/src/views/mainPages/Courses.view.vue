@@ -1,10 +1,10 @@
 <template>
   <Header />
 
-  <StarterTab mainText="выбирай своё будущее" secondaryText="курсы по программированию" />
+  <StarterTab mainText="выбирай своё будущее" secondaryText="курсы по программированию" /> <!--Опять ужасная конструкция-->
 
   <CourseInfo v-for="course in courses_info" :imageLink="course.iLink" :courseLink="course.cLink"
-    :courseText="course.cText" :courseDescription="course.cDescription" :reverseLayout="course.rLayout" />
+    :courseText="course.cText" :courseDescription="course.cDescription" :reverseLayout="course.rLayout" /> <!--ну тут более менее конечно реализовано-->
 
   <Footer />
 </template>
@@ -17,7 +17,7 @@ import CourseInfo from "@/components/coursesComponents/CourseInfo.vue";
 import pythonBg from "@/views/bgImages/courses-python-bg.png";
 import dataAnalysisBg from "@/views/bgImages/courses-data-analysis-bg.png";
 
-const courses_info = [
+const courses_info = [ // Убрать это с этого .vue файла, сделать отдельные массивы в отдельном файле либо с бдшками сделать
   {
     iLink: pythonBg,
     cLink: "/python-course",
@@ -35,5 +35,3 @@ const courses_info = [
   }
 ];
 </script>
-
-<style scoped></style>

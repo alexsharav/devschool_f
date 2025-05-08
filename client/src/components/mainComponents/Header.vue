@@ -1,4 +1,4 @@
-<template>
+<template><!--Хороший хедер, но в nav можно сделать <ul> + изображения через переменную в js-->
   <header :class="['header-box', { 'header-fixer': showMenu }]">
     <router-link to="/" class="dev-head-main">дев.школа</router-link>
 
@@ -24,7 +24,7 @@
   </header>
 </template>
 
-<script setup>
+<script setup> // Впринципе неплохо, но сделать бы как в hexrays изменение фокуса линка + показ navbar выбранного рутер-линка
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { getCookie } from "@/utils/cookie";
 import router from "@/router";

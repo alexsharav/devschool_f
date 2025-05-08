@@ -1,4 +1,4 @@
-<template>
+<template> <!--Хз че тут ваще можно добавить, а так если что доп слоты-->
     <section class="tab">
         <h1 class="dev-tab-main-text">{{ mainText }}</h1>
         <p class="dev-tab-desc">{{ secondaryText }}</p>
@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-const props = defineProps({
+const props = defineProps({ // ну я думаю тут можно оставить конструкцию, надо подумать
     mainText: String,
     secondaryText: String
 });

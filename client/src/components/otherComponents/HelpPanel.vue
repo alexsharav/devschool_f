@@ -1,4 +1,4 @@
-<template>
+<template> <!--сделать работу с js(отправка сообщения)-->
     <section class="help-panel">
         <div class="contact-information">
             <h1 class="contact-information-text">Информация и контакты</h1>
@@ -64,6 +64,20 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
+const helpData = ref({  // на будущее (надо доработать)
+    userName: undefined,
+    userSecondName: undefined,
+    userEmail: undefined,
+    userMessage: undefined,
+});
+
+function helpSetter(fieldName, newValue) {
+    if (Boolean(newValue)) {
+        helpData.value[fieldName] = newValue;
+    }
+}
 </script>
 
 <style scoped>

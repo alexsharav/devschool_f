@@ -1,4 +1,4 @@
-<template>
+<template> <!--легаси код(не трогать)-->
 
   <header>
     <div class="caption">Профиль</div>

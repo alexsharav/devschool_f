@@ -1,4 +1,4 @@
-<template>
+<template> <!--Мне взападло смотреть на этот говнокод, в будущем посмотреть на него-->
     <Header />
 
     <StarterTab mainText="дев.школа" secondaryText="система образовательных курсов и тестов">
@@ -24,7 +24,7 @@ import Footer from "@/components/mainComponents/Footer.vue";
 import StarterTab from "@/components/mainComponents/StarterTab.vue";
 import { useRouter } from 'vue-router';
 
-const router = useRouter();
+const router = useRouter(); // Объявление отдельной переменной для рутера??? а где он используется
 </script>
 
 <style scoped>

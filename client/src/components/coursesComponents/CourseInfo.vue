@@ -1,4 +1,4 @@
-<template>
+<template> <!--Впринципе нормально конечно, но можно добавить слоты + использовать не только в странице по курсам-->
     <section :class="['tab', { 'reverse-layout': reverseLayout }]">
         <img class="course-img" :src="imageLink" alt="course-img" @click="router.push({ path: courseLink })">
 
@@ -16,7 +16,7 @@
 import { useRouter } from 'vue-router';
 const router = useRouter();
 
-const props = defineProps({
+const props = defineProps({  // убрать пропсы в другой файлик либо делать с бдшками а вообще лучше как-нибудь избавиться от таких конструкций
     imageLink: [String, Object],
     courseLink: String,
     courseText: String,

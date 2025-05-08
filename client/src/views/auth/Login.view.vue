@@ -1,7 +1,7 @@
 <template>
     <AuthForm authAnotherLink="/registration" captionForm="Авторизация"
               buttonForm="Войти" linkQuestion1="нет аккаунта? - "
-              linkQuestion2="регистрация" :authFunc=login />
+              linkQuestion2="регистрация" :authFunc=login /> <!--убрать просто-->
 </template>
 
 <script setup>
@@ -10,7 +10,7 @@ import router from '@/router';
 import { setCookie } from '@/utils/cookie';
 import AuthForm from '@/components/authComponents/AuthForm.vue';
 
-function login(event) {
+function login(event) {     // Надо посмотреть че за функция и можно ли её засунуть в отдельный файл
     event.preventDefault();
     fetch(API_SERVER.AUTH.LOGIN, {
         method: "POST",

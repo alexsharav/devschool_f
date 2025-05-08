@@ -1,4 +1,4 @@
-<template>
+<template> <!--мегасырой футер, впринципе сделан нормально, но очень мало всего-->
     <footer :class="['footer-box', { 'fixed-footer': isFixed }]">
         <router-link to="/" class="dev-head-main">© dev.school</router-link>
         <h1 class="devschool-footer-text">{{curDate.toDateString()}}</h1>
