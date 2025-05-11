@@ -8,7 +8,6 @@ import HelpView from '@/views/mainPages/Help.view.vue';
 import TestsView from '@/views/mainPages/Tests.view.vue';
 import UserPanelView from '@/views/userPages/UserPanel.view.vue';
 
-
 const routes = [
   {
     path: '/',
@@ -75,6 +74,25 @@ const routes = [
     component: UserPanelView
   }
 ]
+
+const context = require.context('@/views/courses/', true, /Course\.vue$/);
+
+context.keys().forEach((key) => {
+  const match = key.match(/^\.\/([^/]+)\/([^/]+Course)\.vue$/);
+  if (!match) return;
+
+  const courseFolder = match[1];
+  const component = context(key).default;
+
+  routes.push({
+    path: `/${courseFolder}`,
+    name: `${courseFolder}-overview`,
+    meta: {
+      title: 'Список курса'
+    },
+    component,
+  });
+});
 
 const router = createRouter({
   history: createWebHistory(),

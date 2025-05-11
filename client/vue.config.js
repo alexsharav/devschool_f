@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     chainWebpack: (config) => {
         config.plugin('define').tap((definitions) => {
@@ -8,5 +10,13 @@ module.exports = {
             })
             return definitions
         })
-    }
+    },
+
+    configureWebpack: {
+        resolve: {
+            alias: {
+                '@': path.resolve(__dirname, 'src'),
+            },
+        },
+    },
 }
