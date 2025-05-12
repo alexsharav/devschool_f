@@ -76,23 +76,45 @@ const routes = [
 ]
 
 const context = require.context('@/views/courses/', true, /Course\.vue$/);
+const lessonPages = require.context('@/views/courses/', true, /^\.\/[^/]+\/chapters\/[0-9]+\/[0-9.]+\.vue$/);
 
-context.keys().forEach((key) => {
-  const match = key.match(/^\.\/([^/]+)\/([^/]+Course)\.vue$/);
-  if (!match) return;
+context.keys().forEach(
+  (key) => {
+    const match = key.match(/^\.\/([^/]+)\/([^/]+Course)\.vue$/);
+    const courseFolder = match[1];
+    const component = context(key).default;
 
-  const courseFolder = match[1];
-  const component = context(key).default;
+    routes.push(
+      {
+        path: `/courses/${courseFolder}`,
+        name: `${courseFolder}-course`,
+        meta: {
+          title: `${courseFolder} | Список курса`
+        },
+        component,
+      }
+    );
+  }
+);
 
-  routes.push({
-    path: `/${courseFolder}`,
-    name: `${courseFolder}-overview`,
-    meta: {
-      title: 'Список курса'
-    },
-    component,
-  });
-});
+lessonPages.keys().forEach(
+  (key) => {
+    const match = key.match(/^\.\/([^/]+)\/chapters\/([0-9]+)\/([0-9.]+)\.vue$/);
+    const [_, courseFolder, chapter, lesson] = match;
+    const component = lessonPages(key).default;
+
+    routes.push(
+      {
+        path: `/courses/${courseFolder}/${chapter}/${lesson}`,
+        name: `${courseFolder}-${chapter}-${lesson}`,
+        meta: { 
+          title: `${courseFolder} | Урок ${lesson}`
+        },
+        component,
+      }
+    );
+  }
+);
 
 const router = createRouter({
   history: createWebHistory(),
