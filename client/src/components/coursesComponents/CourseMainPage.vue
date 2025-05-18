@@ -3,7 +3,7 @@
         <h1>Курс: Python</h1>
         <ul>
             <li v-for="lesson in lessons" :key="lesson.path">
-                <router-link class="oleg" :to="lesson.path">{{ lesson.title }}</router-link>
+                <router-link class="lesson-routers" :to="lesson.path">{{ lesson.title }}</router-link>
             </li>
         </ul>
     </div>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-    name: 'PythonCourse',
+    name: 'Программирование на языке Python',
     data() {
         return {
             lessons: [],
@@ -28,7 +28,7 @@ export default {
             const [_, chapter, lesson] = match;
 
             return {
-                path: `/courses/python-course/${chapter}/${lesson}`,
+                path: `/courses/Python/${chapter}/${lesson}`,
                 title: `Глава ${chapter}, Урок ${lesson}`,
             };
         }).filter(Boolean);
@@ -38,7 +38,7 @@ export default {
 };
 </script>
 <style scoped>
-.oleg {
+.lesson-routers {
     font-size: 24px;
     color: black;
 }

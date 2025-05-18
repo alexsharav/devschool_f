@@ -1,6 +1,9 @@
-<template><!--Хороший хедер, но в nav можно сделать <ul> + изображения через переменную в js-->
+<template>
   <header :class="['header-box', { 'header-fixer': showMenu }]">
-    <router-link to="/" class="dev-head-main">дев.школа</router-link>
+    <router-link to="/" class="dev-head-main">
+      <img class='devschool-cat' :src="require('@/views/bgImages/devschool.png')">
+      дев.школа
+    </router-link>
 
     <nav :class="['nav-bar', { 'nav-visible': showMenu }]">
       <router-link to="/courses">Курсы</router-link>
@@ -24,7 +27,7 @@
   </header>
 </template>
 
-<script setup> // Впринципе неплохо, но сделать бы как в hexrays изменение фокуса линка + показ navbar выбранного рутер-линка
+<script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { getCookie } from "@/utils/cookie";
 import router from "@/router";
@@ -80,10 +83,18 @@ onBeforeUnmount(() => {
   border-radius: 16px;
 }
 
+.devschool-cat {
+  width: 50px;
+  height: 50px;
+}
+
 .dev-head-main {
-  font-size: 23px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
   font-weight: bolder;
-  padding: 0px 0px 0px 30px;
+  padding: 0px 0px 0px 15px;
+  gap: 5px;
   color: rgb(8, 8, 8);
   text-decoration: none;
 }

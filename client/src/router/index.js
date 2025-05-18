@@ -75,14 +75,14 @@ const routes = [
   }
 ]
 
-const context = require.context('@/views/courses/', true, /Course\.vue$/);
+const coursePages = require.context('@/views/courses/', true, /Course\.vue$/);
 const lessonPages = require.context('@/views/courses/', true, /^\.\/[^/]+\/chapters\/[0-9]+\/[0-9.]+\.vue$/);
 
-context.keys().forEach(
+coursePages.keys().forEach(
   (key) => {
     const match = key.match(/^\.\/([^/]+)\/([^/]+Course)\.vue$/);
     const courseFolder = match[1];
-    const component = context(key).default;
+    const component = coursePages(key).default;
 
     routes.push(
       {

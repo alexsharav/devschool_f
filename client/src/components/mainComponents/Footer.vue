@@ -1,14 +1,17 @@
 <template> <!--мегасырой футер, впринципе сделан нормально, но очень мало всего-->
-    <footer :class="['footer-box', { 'fixed-footer': isFixed }]">
-        <router-link to="/" class="dev-head-main">© dev.school</router-link>
-        <h1 class="devschool-footer-text">{{curDate.toDateString()}}</h1>
+    <footer class='footer-box'>
+        <router-link to="/" class="dev-head-main">
+            <img class='devschool-cat' :src="require('@/views/bgImages/devschool.png')">
+            дев.школа
+        </router-link>
+        <h1 class="devschool-footer-text">{{ curDate }} pre-alpha</h1>
     </footer>
 </template>
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
 const isFixed = ref(false)
-const curDate = new Date();
+const curDate = new Date().getFullYear();
 
 const updateFooterPosition = () => {
     nextTick(() => {
@@ -36,27 +39,39 @@ onBeforeUnmount(() => {
     width: 90%;
     max-width: 1200px;
     min-height: 64px;
-    margin-top: 10px;
-}
-
-
-.fixed-footer {
-    position: absolute;
-    bottom: 0;
+    margin-top: 40px;
+    height: 85px;
+    border-top: 1px solid rgba(151, 151, 151, 0.253);
 }
 
 .dev-head-main {
     text-decoration: none;
 }
 
-.devschool-footer-text,
-.dev-head-main {
+.devschool-footer-text {
     font-weight: normal;
     font-size: 20px;
-    color: rgb(22, 22, 22);
+    color: rgb(116, 116, 116);
+}
+
+.devschool-cat {
+  width: 50px;
+  height: 50px;
+}
+
+.dev-head-main {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bolder;
+  padding: 0px 0px 0px 15px;
+  gap: 5px;
+  color: rgb(33, 33, 33);
+  text-decoration: none;
 }
 
 @media (max-width: 750px) {
+
     .devschool-footer-text,
     .dev-head-main {
         font-size: 17px;
@@ -64,6 +79,7 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 500px) {
+
     .devschool-footer-text,
     .dev-head-main {
         font-size: 15px;
