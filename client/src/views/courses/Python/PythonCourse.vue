@@ -1,45 +1,13 @@
 <template>
-    <div>
-        <h1>Курс: Python</h1>
-        <ul>
-            <li v-for="lesson in lessons" :key="lesson.path">
-                <router-link class="oleg" :to="lesson.path">{{ lesson.title }}</router-link>
-            </li>
-        </ul>
-    </div>
+  <CourseLessonList
+    :courseTitle="course.title"
+    :chapters="course.chapters"
+  />
 </template>
 
-<script>
-export default {
-    name: 'PythonCourse',
-    data() {
-        return {
-            lessons: [],
-        };
-    },
-    created() {
-        const context = require.context('./chapters/', true, /.vue$/);
+<script setup>
+import CourseLessonList from '@/components/coursesComponents/CourseLessonlist.vue'
+import allLessons from '@/router/courseLessons.js'
 
-
-        const parsedLessons = context.keys().map((key) => {
-            const match = key.match(/^\.\/([0-9]+)\/([0-9.]+)\.vue$/);
-            if (!match) return null;
-
-            const [_, chapter, lesson] = match;
-
-            return {
-                path: `/courses/python-course/${chapter}/${lesson}`,
-                title: `Глава ${chapter}, Урок ${lesson}`,
-            };
-        }).filter(Boolean);
-
-        this.lessons = parsedLessons;
-    },
-};
+const course = allLessons['python-course']
 </script>
-<style scoped>
-.oleg {
-    font-size: 24px;
-    color: black;
-}
-</style>
