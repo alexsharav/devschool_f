@@ -14,12 +14,6 @@
   font-family: sans-serif;
 }
 
-body {
-  background-color: #ffffff;
-  background-image: radial-gradient(#2f2f2f36 0.8px, #ffffff 0.8px);
-  background-size: 16px 16px;
-}
-
 .all-flex {
   display: flex;
   flex-flow: column wrap;
