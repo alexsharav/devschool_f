@@ -5,7 +5,7 @@
   <div class="lessons-list">
     <div v-for="(chapter, chapterIndex) in chapters" class="flex-div">
       <h1 class="chapter-header">{{ chapterIndex + 1 }}. {{ chapter.chapterTitle }}</h1>
-      
+
       <router-link v-for="(lesson, lessonIndex) in chapter.lessons" class="lesson-routers" :to="lesson.path">
         {{ lessonIndex + 1 }}. {{ lesson.title }}
       </router-link>
@@ -43,6 +43,7 @@ defineProps({
   font-weight: bold;
   padding-bottom: 20px;
   margin-top: 20px;
+  font-size: 30px;
 }
 
 .lesson-routers {
@@ -62,5 +63,35 @@ defineProps({
 .chapter-header,
 .lesson-routers {
   border-bottom: 1px solid rgb(219, 219, 219);
+}
+
+@media (max-width: 750px) {
+  .lessons-list {
+    width: 70%;
+    margin-top: 40px;
+  }
+
+  .chapter-header {
+    font-size: 22px;
+  }
+
+  .lesson-routers {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 400px) {
+  .lessons-list {
+    width: 90%;
+    margin-top: 40px;
+  }
+
+  .chapter-header {
+    font-size: 17px;
+  }
+
+  .lesson-routers {
+    font-size: 13px;
+  }
 }
 </style>
