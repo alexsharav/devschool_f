@@ -1,6 +1,7 @@
 <template>
   <CourseLessonList
     :courseTitle="course.title"
+    :courseDesc="course.cDescription"
     :chapters="course.chapters"
   />
 </template>
@@ -9,5 +10,5 @@
 import CourseLessonList from '@/components/coursesComponents/CourseLessonlist.vue'
 import allLessons from '@/router/courseLessons.js'
 
-const course = allLessons['python-course']
+const course = allLessons['Python']
 </script>

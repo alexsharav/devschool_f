@@ -1,6 +1,6 @@
 <template>
     <section class="course-tab">
-        <div>
+        <div class="center-div">
             <h1 class="course-tab-main-text">{{ courseMainText }}</h1>
             <p class="course-tab-desc">{{ courseSecondaryText }}</p>
         </div>
@@ -19,57 +19,76 @@ const props = defineProps({
     align-items: center;
     display: flex;
     flex-flow: column wrap;
-    width: 100%;
-    height: 300px;
-    background-color: rgb(223, 223, 223);
-    margin-top: 120px;
+    width: 98%;
+    margin-top: 14px;
+    border-radius: 30px;
+    border: 1px solid rgb(185, 255, 157);
+    background-color: #8fff99;
+    opacity: 1;
+    background-image: linear-gradient(#6aff77 1px, transparent 1px), linear-gradient(to right, #6aff77 1px, #8fff99 1px);
+    background-size: 20px 20px;
+    padding-bottom: 100px;
 }
 
 .course-tab-main-text {
-    margin-top: 120px;
-    font-size: 50px;
+    margin-top: 140px;
+    font-size: 45px;
     font-weight: bold;
-    color: rgb(32, 32, 32);
+    color: rgb(63, 63, 63);
 }
 
 .course-tab-desc {
     padding: 10px 0px;
     margin-top: 20px;
-    font-size: 20px;
-    color: rgb(90, 90, 90);
-    text-align: center;
+    font-size: 25px;
+    color: rgb(71, 71, 71);
+}
+
+.center-div {
+    display: flex;
+    flex-flow: column;
+    justify-items: left;
+    width: 60%;
 }
 
 @media (max-width: 750px) {
     .course-tab-desc {
         font-size: 17px;
         margin-top: 10px;
-        padding: 10px 5%;
+        padding: 10px 0%;
     }
 
     .course-tab-main-text {
         font-size: 30px;
-        margin-top: 160px;
+        margin-top: 130px;
+    }
+
+    .center-div {
+        width: 70%;
     }
 
     .course-tab {
-        height: 360px;
+        padding-bottom: 40px;
     }
 }
 
 @media (max-width: 400px) {
     .course-tab-desc {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .course-tab-main-text {
-        font-size: 22px;
-        margin-top: 120px;
+        font-size: 24px;
+        margin-top: 100px;
         padding: 10px 0px;
     }
 
+    .center-div {
+        width: 90%;
+    }
+
     .course-tab {
-        height: 280px;
+        padding-bottom: 30px;
     }
 }
 </style>

@@ -1,28 +1,36 @@
 <template>
   <Header />
-  <CourseTab courseMainText="Основы программирования на Python" courseSecondaryText="123123" />
+  <CourseTab :courseMainText="courseTitle" :courseSecondaryText="courseDesc" />
 
   <div class="lessons-list">
-    <div v-for="chapter in chapters" :key="chapter.chapterNumber" class="flex-div">
-      <h1>Глава {{ chapter.chapterNumber }}. {{ chapter.chapterTitle }}</h1>
-      <router-link v-for="lesson in chapter.lessons" :key="lesson.path" class="lesson-routers" :to="lesson.path">{{ lesson.title }}</router-link>
+    <div v-for="(chapter, chapterIndex) in chapters" class="flex-div">
+      <h1 class="chapter-header">{{ chapterIndex + 1 }}. {{ chapter.chapterTitle }}</h1>
+      
+      <router-link v-for="(lesson, lessonIndex) in chapter.lessons" class="lesson-routers" :to="lesson.path">
+        {{ lessonIndex + 1 }}. {{ lesson.title }}
+      </router-link>
     </div>
   </div>
+
+  <Footer />
 </template>
 
 <script setup>
+import Footer from '../mainComponents/Footer.vue';
 import Header from '../mainComponents/Header.vue';
 import CourseTab from './CourseTab.vue';
 
 defineProps({
   courseTitle: String,
+  courseDesc: String,
   chapters: Array
 });
 </script>
 
 <style scoped>
 .lessons-list {
-  margin-top: 35px;
+  width: 50%;
+  margin-top: 40px;
 }
 
 .flex-div {
@@ -30,12 +38,29 @@ defineProps({
   flex-flow: column;
 }
 
+.chapter-header {
+  color: rgb(85, 85, 85);
+  font-weight: bold;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+
 .lesson-routers {
   font-size: 23px;
   color: #4b4b4b;
   text-decoration: none;
-  margin-left: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-left: 40px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+
+.lesson-routers:hover {
+  text-decoration-line: underline;
+}
+
+.chapter-header,
+.lesson-routers {
+  border-bottom: 1px solid rgb(219, 219, 219);
 }
 </style>

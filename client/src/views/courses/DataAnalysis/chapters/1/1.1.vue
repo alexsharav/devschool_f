@@ -1,9 +1,3 @@
 <template>
-  <div>Это урок 1.1</div>
+  <p>124123</p>
 </template>
-
-<script>
-export default {
-  name: 'Lesson1_1'
-}
-</script>

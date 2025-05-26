@@ -3,7 +3,4 @@
 </template>
 
 <script>
-export default {
-  name: 'Lesson1_1'
-};
 </script>
