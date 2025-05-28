@@ -1,4 +1,4 @@
-<template> <!--Хз че тут ваще можно добавить, а так если что доп слоты-->
+<template>
     <section class="tab">
         <h1 class="dev-tab-main-text">{{ mainText }}</h1>
         <p class="dev-tab-desc">{{ secondaryText }}</p>
@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-const props = defineProps({ // ну я думаю тут можно оставить конструкцию, надо подумать
+defineProps({
     mainText: String,
     secondaryText: String
 });
@@ -16,17 +16,15 @@ const props = defineProps({ // ну я думаю тут можно остави
 
 <style scoped>
 .tab {
-    margin-top: 14px;
     align-items: center;
     display: flex;
     flex-flow: column wrap;
-    width: 98%;
-    height: 500px;
-    background-image:
-        repeating-radial-gradient(circle at 0 0, transparent 0, rgb(132, 253, 162) 10px), repeating-linear-gradient(rgb(139, 255, 230), rgb(168, 255, 157));
-    border: 1px solid rgb(0, 219, 66);
-    border-radius: 30px;
-
+    width: 100%;
+    background-image: url('@/views/bgImages/123.png');
+    background-size: 100% 100%; /* Растягивает по ширине, сохраняет пропорции */
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-color: rgb(215, 255, 215);
 }
 
 .dev-tab-main-text {
@@ -55,10 +53,6 @@ const props = defineProps({ // ну я думаю тут можно остави
         font-size: 30px;
         margin-top: 160px;
     }
-
-    .tab {
-        height: 360px;
-    }
 }
 
 @media (max-width: 400px) {
@@ -70,10 +64,6 @@ const props = defineProps({ // ну я думаю тут можно остави
         font-size: 22px;
         margin-top: 120px;
         padding: 10px 0px;
-    }
-
-    .tab {
-        height: 280px;
     }
 }
 </style>

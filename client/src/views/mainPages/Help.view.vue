@@ -1,9 +1,6 @@
 <template>
     <Header />
-
-    <StarterTab mainText="прислушиваемся к вам"
-        secondaryText="нашей целью является постоянное улучшение вида сайта и его работы" /> <!-- избавиться от таких конструкций(уже писал в HelpPanel.vue)-->
-
+    
     <HelpPanel />
 
     <Footer />

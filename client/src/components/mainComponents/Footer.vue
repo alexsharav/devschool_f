@@ -1,4 +1,4 @@
-<template> <!--мегасырой футер, впринципе сделан нормально, но очень мало всего-->
+<template>
     <footer class='footer-box'>
         <router-link to="/" class="dev-head-main">
             <img class='devschool-cat' :src="require('@/views/bgImages/devschool.png')">

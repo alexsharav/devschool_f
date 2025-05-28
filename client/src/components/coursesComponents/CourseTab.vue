@@ -23,9 +23,7 @@ const props = defineProps({
     margin-top: 14px;
     border-radius: 30px;
     border: 1px solid rgb(185, 255, 157);
-    background-color: #8fff99;
-    opacity: 1;
-    background-image: linear-gradient(#6aff77 1px, transparent 1px), linear-gradient(to right, #6aff77 1px, #8fff99 1px);
+    background-color:#beffc3;
     background-size: 20px 20px;
     padding-bottom: 100px;
 }

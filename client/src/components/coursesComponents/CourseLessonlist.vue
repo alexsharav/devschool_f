@@ -67,7 +67,7 @@ defineProps({
 
 @media (max-width: 750px) {
   .lessons-list {
-    width: 70%;
+    width: 80%;
     margin-top: 40px;
   }
 
@@ -77,21 +77,25 @@ defineProps({
 
   .lesson-routers {
     font-size: 17px;
+    margin-top: 14px;
+    padding-bottom: 17px;
   }
 }
 
 @media (max-width: 400px) {
   .lessons-list {
-    width: 90%;
+    width: 94%;
     margin-top: 40px;
   }
 
   .chapter-header {
-    font-size: 17px;
+    font-size: 19px;
   }
 
   .lesson-routers {
-    font-size: 13px;
+    font-size: 15px;
+    margin-top: 12px;
+    padding-bottom: 15px;
   }
 }
 </style>

@@ -1,7 +1,7 @@
-<template> <!--Мне взападло смотреть на этот говнокод, в будущем посмотреть на него-->
+<template>
     <Header />
 
-    <StarterTab mainText="дев.школа" secondaryText="система образовательных курсов и тестов">
+    <StarterTab mainText="Дев.Школа" secondaryText="образовательные курсы и тесты для всех">
         <template #buttons>
             <div class="buttons">
                 <button class="dev-tab-start-courses" @click="router.push('/courses')">
@@ -15,6 +15,14 @@
         </template>
     </StarterTab>
 
+    <section class="devschool-base-info">
+        <h1>Дев.Школа - Платформа для тех, кто хочет войти в IT. Курсы по программированию, практические задания и поддержка от экспертов. Учиться легко — даже с нуля.</h1>
+
+        <p>Наша образовательная платформа построена для развития технических навыков: от базового программирования до продвинутых технологий. 
+            Мы верим, что каждый может стать разработчиком. Наши курсы — это путь от первых строк кода до уверенного старта в карьере. 
+            Обучение, практика, результат.</p>
+    </section>
+
     <Footer />
 </template>
 
@@ -24,7 +32,7 @@ import Footer from "@/components/mainComponents/Footer.vue";
 import StarterTab from "@/components/mainComponents/StarterTab.vue";
 import { useRouter } from 'vue-router';
 
-const router = useRouter(); // Объявление отдельной переменной для рутера??? а где он используется
+const router = useRouter();
 </script>
 
 <style scoped>
@@ -54,7 +62,6 @@ const router = useRouter(); // Объявление отдельной пере�
     font-size: 16px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 18px;
     padding: 0px 15px;
 }
 
@@ -71,7 +78,7 @@ const router = useRouter(); // Объявление отдельной пере�
 }
 
 .dev-tab-start-tests {
-    background: rgb(255, 255, 255);
+    background: rgb(248, 248, 248);
 }
 
 .dev-tab-tests {
@@ -79,7 +86,26 @@ const router = useRouter(); // Объявление отдельной пере�
 }
 
 .dev-tab-start-tests:hover {
-    background: rgb(201, 201, 201);
+    background: rgb(212, 212, 212);
+}
+
+.devschool-base-info {
+    width: 60%;
+    display: flex;
+    flex-flow: row;
+    margin-top: 20px;
+}
+
+.devschool-base-info h1 {
+    font-weight: normal;
+    font-size: 35px;
+    padding-right: 5px;
+    border-right: 1px solid black;
+}
+
+.devschool-base-info p {
+    padding-left: 10px;
+    font-size: 18px;
 }
 
 @media (max-width: 700px) {
