@@ -16,11 +16,24 @@
     </StarterTab>
 
     <section class="devschool-base-info">
-        <h1>Дев.Школа - Платформа для тех, кто хочет войти в IT. Курсы по программированию, практические задания и поддержка от экспертов. Учиться легко — даже с нуля.</h1>
+        <h1><span class="devschool-base-info-text">Дев.Школа</span> - Платформа для тех, кто хочет войти в <b>IT</b>. Курсы по
+            программированию, практические задания и
+            поддержка
+            от экспертов. <span style="text-decoration: underline;">Учиться легко — даже с нуля.</span></h1>
 
-        <p>Наша образовательная платформа построена для развития технических навыков: от базового программирования до продвинутых технологий. 
-            Мы верим, что каждый может стать разработчиком. Наши курсы — это путь от первых строк кода до уверенного старта в карьере. 
-            Обучение, практика, результат.</p>
+        <div>
+            <p>Наша образовательная платформа построена для развития технических навыков: от базового программирования
+                до
+                продвинутых технологий.
+                Мы верим, что каждый может стать разработчиком.</p>
+
+            <p>Наши курсы — это путь от первых строк кода до уверенного старта в карьере.
+                Обучение, практика, результат.</p>
+        </div>
+    </section>
+
+    <section class="made-by-info">
+        <h1></h1>
     </section>
 
     <Footer />
@@ -93,19 +106,77 @@ const router = useRouter();
     width: 60%;
     display: flex;
     flex-flow: row;
-    margin-top: 20px;
+    margin-top: 145px;
+    align-items: center;
+    justify-content: center;
 }
 
 .devschool-base-info h1 {
     font-weight: normal;
     font-size: 35px;
-    padding-right: 5px;
+    padding-right: 15px;
     border-right: 1px solid black;
+}
+
+.devschool-base-info div {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10px;
 }
 
 .devschool-base-info p {
     padding-left: 10px;
     font-size: 18px;
+    text-align: justify;
+}
+
+.devschool-base-info-text {
+    background: #2a9b90;
+    background: linear-gradient(90deg, rgba(42, 155, 144, 1) 0%, rgba(57, 173, 123, 1) 33%, rgba(98, 199, 87, 1) 100%, rgba(83, 193, 237, 1) 56%);
+}
+
+@media (max-width: 1350px) {
+    .devschool-base-info {
+        width: 75%;
+
+    }
+
+    .devschool-base-info h1 {
+        font-size: 26px;
+    }
+
+    .devschool-base-info p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 830px) {
+    .devschool-base-info {
+        width: 80%;
+    }
+
+    .devschool-base-info h1 {
+        font-size: 23px;
+    }
+
+    .devschool-base-info p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 530px) {
+    .devschool-base-info {
+        width: 90%;
+
+    }
+
+    .devschool-base-info h1 {
+        font-size: 18px;
+    }
+
+    .devschool-base-info p {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 700px) {
@@ -125,6 +196,23 @@ const router = useRouter();
 
     .buttons button p {
         font-size: 12px;
+    }
+
+    .devschool-base-info {
+        width: 95%;
+        flex-flow: column;
+    }
+
+    .devschool-base-info h1 {
+        border-right: none;
+        border-bottom: 1px solid black;
+        padding-bottom: 15px;
+        padding-right: 10px;
+    }
+
+    .devschool-base-info p {
+        margin-top: 10px;
+        padding-left: 0px;
     }
 }
 </style>

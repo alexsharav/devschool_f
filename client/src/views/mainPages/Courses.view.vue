@@ -13,3 +13,6 @@ import Footer from "@/components/mainComponents/Footer.vue";
 import CourseInfo from "@/components/coursesComponents/CourseInfo.vue";
 import courseLessons from "@/router/courseLessons";
 </script>
+
+<style scoped>
+</style>

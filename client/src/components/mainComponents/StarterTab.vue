@@ -20,7 +20,7 @@ defineProps({
     display: flex;
     flex-flow: column wrap;
     width: 100%;
-    background-image: url('@/views/bgImages/123.png');
+    background-image: url('@/views/bgImages/green_lines.png');
     background-size: 100% 100%; /* Растягивает по ширине, сохраняет пропорции */
     background-repeat: no-repeat;
     background-position: top center;

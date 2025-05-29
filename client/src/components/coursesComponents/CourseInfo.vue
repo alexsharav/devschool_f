@@ -29,6 +29,10 @@ defineProps({
 </script>
 
 <style scoped>
+.tab:first-of-type {
+    margin-top: 50px;
+}
+
 .tab {
     padding: 60px 0;
     display: flex;
