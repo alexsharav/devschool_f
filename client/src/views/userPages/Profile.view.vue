@@ -1,4 +1,5 @@
-<template>
+<template> <!--легаси код(не трогать)-->
+
   <header>
     <div class="caption">Профиль</div>
     <div v-if="!token">
@@ -11,6 +12,7 @@
       <div id="balance">{{ userData.balance }} {{ userData.currency }}</div>
     </div>
   </header>
+
   <main>
     <form v-if="token">
       <div class="item-form" style="flex-direction: column">

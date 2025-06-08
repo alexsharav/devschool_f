@@ -1,9 +1,10 @@
 <template>
   <div class="all-flex">
-    <router-view />
+    <div class="content-wrapper">
+      <router-view />
+    </div>
   </div>
 </template>
-
 <style>
 
 * {
@@ -13,13 +14,15 @@
   font-family: sans-serif;
 }
 
-body {
-  background: #ebe8f7;
-}
-
 .all-flex {
   display: flex;
-  justify-content: center;
+  flex-flow: column;
 }
 
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 </style>

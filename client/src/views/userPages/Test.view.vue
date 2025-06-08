@@ -1,4 +1,5 @@
 <template>
+  <!-- ВСЕ ЭТО ЛЕГАСИ КОД (НЕ ИСПОЛЬЗУЕТСЯ В БУДУЩЕМ, ОСТАВЛЕН ДЛЯ ПОНИМАНИЯ СТРУКТУРЫ БУДУЩЕГО САЙТА) -->
   <Header />
   <main>
     <div v-if="finishedTest">
@@ -102,7 +103,7 @@
 </template>
 
 <script setup>
-import Header from "@/components/Header.vue";
+import Header from "@/components/mainComponents/Header.vue";
 import { API_SERVER } from "@/constants/API_SERVER.constants";
 import { getCookie } from "@/utils/cookie";
 import { ref, watchEffect } from "vue";
