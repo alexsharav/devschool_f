@@ -16,7 +16,7 @@
 
 .all-flex {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column;
 }
 
 .content-wrapper {

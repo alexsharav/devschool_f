@@ -1,7 +1,7 @@
 <template>
     <footer class='footer-box'>
         <router-link to="/" class="dev-head-main">
-            <img class='devschool-cat' :src="require('@/views/bgImages/devschool.png')">
+            <img class='devschool-cat' :src="devschoolPNG">
             дев.школа
         </router-link>
         <h1 class="devschool-footer-text">{{ curDate }} pre-alpha</h1>
@@ -9,6 +9,7 @@
 </template>
 
 <script setup>
+import devschoolPNG from '@/views/bgImages/devschool.png'
 import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
 const isFixed = ref(false)
 const curDate = new Date().getFullYear();
@@ -41,7 +42,7 @@ onBeforeUnmount(() => {
     min-height: 64px;
     margin-top: 40px;
     height: 85px;
-    border-top: 1px solid rgba(151, 151, 151, 0.253);
+    border-top: 1px solid rgba(151, 151, 151, 0.815);
 }
 
 .dev-head-main {

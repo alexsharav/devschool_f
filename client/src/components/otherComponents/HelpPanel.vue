@@ -4,7 +4,7 @@
             <h1 class="contact-information-text">Информация и контакты</h1>
 
             <div class="our-information-office info-item">
-                <img class="map-image" :src="require('@/views/bgImages/icons8-map-50.png')" alt="map-image">
+                <img class="map-image" :src="mapPNG" alt="map-image">
 
                 <div class="info-text">
                     <h1>Наш офис</h1>
@@ -14,7 +14,7 @@
             </div>
 
             <div class="our-information-phone info-item">
-                <img class="phone-image" :src="require('@/views/bgImages/icons8-phone-100.png')" alt="phone-image">
+                <img class="phone-image" :src="phonePNG" alt="phone-image">
 
                 <div class="info-text">
                     <h1>Номер телефона</h1>
@@ -24,7 +24,7 @@
             </div>
 
             <div class="our-information-education info-item">
-                <img class="education-image" :src="require('@/views/bgImages/icons8-education-100.png')"
+                <img class="education-image" :src="educationPNG"
                     alt="education-image">
 
                 <div class="info-text">
@@ -64,6 +64,9 @@
 </template>
 
 <script setup>
+import mapPNG from '@/views/bgImages/icons8-map-50.png'
+import phonePNG from '@/views/bgImages/icons8-phone-100.png'
+import educationPNG from '@/views/bgImages/icons8-education-100.png'
 import { ref } from 'vue';
 
 const helpData = ref({  // на будущее (надо доработать)

@@ -1,7 +1,7 @@
 <template>
   <header :class="['header-box', { 'header-fixer': showMenu }]">
     <router-link to="/" class="dev-head-main">
-      <img class='devschool-cat' :src="require('@/views/bgImages/devschool.png')">
+      <img class='devschool-cat' :src="devschoolPNG">
       дев.школа
     </router-link>
 
@@ -21,13 +21,16 @@
     </button>
 
     <button class="display-button" @click="toggleMenu">
-      <img v-if="showMenu" class="x-image" :src="require('@/views/bgImages/x.png')">
-      <img v-else class="three-lines-image" :src="require('@/views/bgImages/three_lines.png')">
+      <img v-if="showMenu" class="x-image" :src="xPNG">
+      <img v-else class="three-lines-image" :src="three_linesPNG">
     </button>
   </header>
 </template>
 
 <script setup>
+import devschoolPNG from '@/views/bgImages/devschool.png'
+import xPNG from '@/views/bgImages/x.png'
+import three_linesPNG from '@/views/bgImages/three_lines.png'
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { getCookie } from "@/utils/cookie";
 import router from "@/router";

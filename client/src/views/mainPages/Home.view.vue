@@ -16,7 +16,9 @@
     </StarterTab>
 
     <section class="devschool-base-info">
-        <h1><span class="devschool-base-info-text">Дев.Школа</span> - Платформа для тех, кто хочет войти в <b>IT</b>. Курсы по
+        <h1><span class="devschool-base-info-text">Дев.Школа</span> - Платформа для тех, кто хочет войти в <b>IT</b>.
+            Курсы
+            по
             программированию, практические задания и
             поддержка
             от экспертов. <span style="text-decoration: underline;">Учиться легко — даже с нуля.</span></h1>
@@ -32,9 +34,11 @@
         </div>
     </section>
 
-    <section class="made-by-info">
-        <h1></h1>
-    </section>
+
+    <div class="bg-blue-500 text-white p-4 rounded-xl">Tailwind работает!</div>
+
+
+
 
     <Footer />
 </template>
@@ -49,6 +53,7 @@ const router = useRouter();
 </script>
 
 <style scoped>
+@import "tailwindcss";
 .tab {
     height: 600px;
 }
@@ -131,14 +136,18 @@ const router = useRouter();
 }
 
 .devschool-base-info-text {
-    background: #2a9b90;
-    background: linear-gradient(90deg, rgba(42, 155, 144, 1) 0%, rgba(57, 173, 123, 1) 33%, rgba(98, 199, 87, 1) 100%, rgba(83, 193, 237, 1) 56%);
+    background: #85ede3;
+    background: linear-gradient(90deg, rgba(133, 237, 227, 1) 0%, rgba(161, 255, 211, 1) 33%, rgb(131, 228, 130) 100%, rgba(156, 227, 255, 1) 57%);
+}
+
+.made-by-info {
+    margin-top: 40px;
 }
 
 @media (max-width: 1350px) {
     .devschool-base-info {
         width: 75%;
-
+        margin-top: 100px;
     }
 
     .devschool-base-info h1 {
@@ -153,6 +162,7 @@ const router = useRouter();
 @media (max-width: 830px) {
     .devschool-base-info {
         width: 80%;
+        margin-top: 80px;
     }
 
     .devschool-base-info h1 {
@@ -167,7 +177,7 @@ const router = useRouter();
 @media (max-width: 530px) {
     .devschool-base-info {
         width: 90%;
-
+        margin-top: 60px;
     }
 
     .devschool-base-info h1 {
