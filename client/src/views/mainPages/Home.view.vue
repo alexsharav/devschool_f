@@ -42,8 +42,6 @@
     </div>
   </section>
 
-  <div class="rounded-xl bg-blue-500 p-4 text-white">Tailwind работает!</div>
-
   <Footer />
 </template>
 
@@ -87,26 +85,26 @@ const router = useRouter();
 
 .dev-tab-start-courses {
   background: rgb(32, 32, 32);
+
+  &:hover {
+    background: rgb(104, 104, 104);
+  }
 }
 
 .dev-tab-courses {
   color: white;
 }
 
-.dev-tab-start-courses:hover {
-  background: rgb(104, 104, 104);
-}
-
 .dev-tab-start-tests {
   background: rgb(248, 248, 248);
+
+  &:hover {
+    background: rgb(212, 212, 212);
+  }
 }
 
 .dev-tab-tests {
   color: rgb(0, 0, 0);
-}
-
-.dev-tab-start-tests:hover {
-  background: rgb(212, 212, 212);
 }
 
 .devschool-base-info {
