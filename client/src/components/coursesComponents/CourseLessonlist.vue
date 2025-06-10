@@ -4,9 +4,15 @@
 
   <div class="lessons-list">
     <div v-for="(chapter, chapterIndex) in chapters" class="flex-div">
-      <h1 class="chapter-header">{{ chapterIndex + 1 }}. {{ chapter.chapterTitle }}</h1>
+      <h1 class="chapter-header">
+        {{ chapterIndex + 1 }}. {{ chapter.chapterTitle }}
+      </h1>
 
-      <router-link v-for="(lesson, lessonIndex) in chapter.lessons" class="lesson-routers" :to="lesson.path">
+      <router-link
+        v-for="(lesson, lessonIndex) in chapter.lessons"
+        class="lesson-routers"
+        :to="lesson.path"
+      >
         {{ lessonIndex + 1 }}. {{ lesson.title }}
       </router-link>
     </div>
@@ -16,14 +22,14 @@
 </template>
 
 <script setup>
-import Footer from '../mainComponents/Footer.vue';
-import Header from '../mainComponents/Header.vue';
-import CourseTab from './CourseTab.vue';
+import Footer from "../mainComponents/Footer.vue";
+import Header from "../mainComponents/Header.vue";
+import CourseTab from "./CourseTab.vue";
 
 defineProps({
   courseTitle: String,
   courseDesc: String,
-  chapters: Array
+  chapters: Array,
 });
 </script>
 

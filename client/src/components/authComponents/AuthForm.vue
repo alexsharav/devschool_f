@@ -1,16 +1,8 @@
 <template>
-  <!-- Здесь можно(нужно) добавить отдельные слоты для регистрации -->
   <section class="container-page">
     <div class="auth-container">
-      <button
-        class="remover-button"
-        @click="
-          () => {
-            router.push({ path: '/' });
-          }
-        "
-      >
-        <img class="x-image" :src="require('@/views/bgImages/x.png')" />
+      <button class="remover-button">
+        <img class="x-image" :src="xPNG" @click="router.push({ path: '/' })" />
       </button>
 
       <form name="auth-form">
@@ -58,9 +50,8 @@
 <script setup>
 import router from "@/router";
 import { ref } from "vue";
-
+import xPNG from "@/views/bgImages/x.png";
 const props = defineProps({
-  // хотел бы избавиться от прямого использования таких конструкций
   captionForm: String,
   buttonForm: String,
   linkQuestion1: String,
@@ -70,14 +61,12 @@ const props = defineProps({
 });
 
 const userData = ref({
-  // опять же можно добавить маунт-проверку на подлинность
   email: "",
   password: "",
 });
 </script>
 
 <style scoped>
-/* очень много бесполезных стилизаций, можно сделать проще */
 .container-page {
   z-index: 2;
   min-height: 100vh;

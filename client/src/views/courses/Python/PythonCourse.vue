@@ -7,8 +7,8 @@
 </template>
 
 <script setup>
-import CourseLessonList from '@/components/coursesComponents/CourseLessonlist.vue'
-import allLessons from '@/router/courseLessons.js'
+import CourseLessonList from "@/components/coursesComponents/CourseLessonlist.vue";
+import allLessons from "@/router/courseLessons.js";
 
-const course = allLessons['Python']
+const course = allLessons["Python"];
 </script>
