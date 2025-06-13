@@ -42,6 +42,87 @@
     </div>
   </section>
 
+  <section class="course-features py-16">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="font-white text-center text-4xl">Особенности наших курсов</h2>
+      <br />
+
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          class="rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl"
+        >
+          <div class="mb-4 text-gray-900">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-12 w-12"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+          </div>
+          <h3 class="mb-2 text-xl font-semibold">Интерактивное обучение</h3>
+          <p class="text-gray-600">
+            Практические задания и проекты с обратной связью от экспертов
+          </p>
+        </div>
+
+        <div
+          class="rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl"
+        >
+          <div class="mb-4 text-gray-900">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-12 w-12"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+              />
+            </svg>
+          </div>
+          <h3 class="mb-2 text-xl font-semibold">Гибкий график</h3>
+          <p class="text-gray-600">Учитесь в удобном для вас темпе и времени</p>
+        </div>
+        <div
+          class="rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl"
+        >
+          <div class="mb-4 text-gray-900">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-12 w-12"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
+          </div>
+          <h3 class="mb-2 text-xl font-semibold">Сообщество</h3>
+          <p class="text-gray-600">
+            Общение с единомышленниками и взаимопомощь в обучении
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <Footer />
 </template>
 
@@ -55,6 +136,10 @@ const router = useRouter();
 </script>
 
 <style scoped>
+.course-features {
+  margin-top: 20vh;
+}
+
 .tab {
   height: 600px;
 }
@@ -63,7 +148,7 @@ const router = useRouter();
   display: flex;
   flex-flow: row wrap;
   gap: 20px;
-  margin-top: 20px;
+  margin-top: 15px;
 
   button {
     border-radius: 12px;
@@ -73,45 +158,30 @@ const router = useRouter();
     align-items: center;
     cursor: pointer;
     border: none;
-    transition: background-color 0.6s ease;
+    transition: 0.3s ease-in-out;
+    background: rgb(59, 59, 59);
+
+    &:hover {
+      background: rgb(104, 104, 104);
+      transform: scale(1.03);
+      box-shadow: 0 4px 8px rgb(150, 150, 150);
+    }
+
     p {
       font-size: 16px;
       text-decoration: none;
       font-weight: bold;
       padding: 0px 15px;
+      color: white;
     }
   }
 }
 
-.dev-tab-start-courses {
-  background: rgb(32, 32, 32);
-
-  &:hover {
-    background: rgb(104, 104, 104);
-  }
-}
-
-.dev-tab-courses {
-  color: white;
-}
-
-.dev-tab-start-tests {
-  background: rgb(248, 248, 248);
-
-  &:hover {
-    background: rgb(212, 212, 212);
-  }
-}
-
-.dev-tab-tests {
-  color: rgb(0, 0, 0);
-}
-
 .devschool-base-info {
-  width: 60%;
+  width: 80%;
   display: flex;
   flex-flow: row;
-  margin-top: 145px;
+  margin-top: 70px;
   align-items: center;
   justify-content: center;
 
@@ -120,6 +190,17 @@ const router = useRouter();
     font-size: 35px;
     padding-right: 15px;
     border-right: 1px solid black;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    b {
+      background: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
   }
 
   div {
@@ -132,6 +213,11 @@ const router = useRouter();
     padding-left: 10px;
     font-size: 18px;
     text-align: justify;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateX(5px);
+    }
   }
 }
 
@@ -146,14 +232,10 @@ const router = useRouter();
   );
 }
 
-.made-by-info {
-  margin-top: 40px;
-}
-
 @media (max-width: 1350px) {
   .devschool-base-info {
     width: 75%;
-    margin-top: 100px;
+    margin-top: 50px;
 
     h1 {
       font-size: 26px;
@@ -168,7 +250,7 @@ const router = useRouter();
 @media (max-width: 830px) {
   .devschool-base-info {
     width: 80%;
-    margin-top: 80px;
+    margin-top: 30px;
 
     h1 {
       font-size: 23px;
@@ -180,30 +262,9 @@ const router = useRouter();
   }
 }
 
-@media (max-width: 530px) {
-  .devschool-base-info {
-    width: 90%;
-    margin-top: 60px;
-
-    h1 {
-      font-size: 18px;
-    }
-
-    p {
-      font-size: 14px;
-    }
-  }
-}
-
-@media (max-width: 700px) {
+@media (max-width: 770px) {
   .tab {
-    height: 450px;
-  }
-}
-
-@media (max-width: 440px) {
-  .tab {
-    height: 400px;
+    height: 500px;
   }
 
   .buttons {
@@ -215,6 +276,7 @@ const router = useRouter();
 
   .devschool-base-info {
     width: 95%;
+    margin-top: 20px;
     flex-flow: column;
 
     h1 {
@@ -222,12 +284,19 @@ const router = useRouter();
       border-bottom: 1px solid black;
       padding-bottom: 15px;
       padding-right: 10px;
+      font-size: 18px;
     }
 
     p {
       margin-top: 10px;
       padding-left: 0px;
     }
+  }
+}
+
+@media (max-width: 500px) {
+  .tab {
+    height: 440px;
   }
 }
 </style>

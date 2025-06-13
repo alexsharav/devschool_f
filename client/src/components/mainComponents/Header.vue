@@ -1,7 +1,10 @@
 <template>
-  <header :class="['header-box', { 'header-fixer': showMenu }]">
+  <header
+    :class="['header-box', { 'header-fixer': showMenu }]"
+    class="max-w-[1200px]"
+  >
     <router-link to="/" class="dev-head-main">
-      <img class='devschool-cat' :src="devschoolPNG">
+      <img class="devschool-cat" :src="devschoolPNG" />
       дев.школа
     </router-link>
 
@@ -9,7 +12,9 @@
       <router-link to="/courses">Курсы</router-link>
       <router-link to="/tests">Тесты</router-link>
       <router-link to="/help">Поддержка</router-link>
-      <router-link v-if="token" to="/user-panel">Панель пользователя</router-link>
+      <router-link v-if="token" to="/user-panel"
+        >Панель пользователя</router-link
+      >
 
       <button class="profile-box-mobile" @click="profileButton">
         <p class="profile-link">Профиль</p>
@@ -21,21 +26,20 @@
     </button>
 
     <button class="display-button" @click="toggleMenu">
-      <img v-if="showMenu" class="x-image" :src="xPNG">
-      <img v-else class="three-lines-image" :src="three_linesPNG">
+      <img v-if="showMenu" class="x-image" :src="xPNG" />
+      <img v-else class="three-lines-image" :src="three_linesPNG" />
     </button>
   </header>
 </template>
 
 <script setup>
-import devschoolPNG from '@/views/bgImages/devschool.png'
-import xPNG from '@/views/bgImages/x.png'
-import three_linesPNG from '@/views/bgImages/three_lines.png'
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import devschoolPNG from "@/views/bgImages/devschool.png";
+import xPNG from "@/views/bgImages/x.png";
+import three_linesPNG from "@/views/bgImages/three_lines.png";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 import { getCookie } from "@/utils/cookie";
 import router from "@/router";
 const token = getCookie("tkn");
-
 const showMenu = ref(false);
 
 function toggleMenu() {
@@ -50,18 +54,18 @@ function handleResize() {
 
 function profileButton() {
   if (token) {
-    router.push('/profile');
+    router.push("/profile");
   } else {
-    router.push('/login');
+    router.push("/login");
   }
 }
 
 onMounted(() => {
-  window.addEventListener('resize', handleResize);
+  window.addEventListener("resize", handleResize);
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener('resize', handleResize);
+  window.removeEventListener("resize", handleResize);
 });
 </script>
 
@@ -78,7 +82,6 @@ onBeforeUnmount(() => {
   align-items: center;
   z-index: 1;
   width: 99%;
-  max-width: 1200px;
   min-height: 64px;
   padding: 4px 4px;
   background: rgb(255, 255, 255);

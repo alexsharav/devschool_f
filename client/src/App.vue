@@ -6,12 +6,16 @@
   </div>
 </template>
 <style>
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+
+  &::selection {
+    background: rgb(184, 255, 184);
+    color: black;
+  }
 }
 
 .all-flex {
